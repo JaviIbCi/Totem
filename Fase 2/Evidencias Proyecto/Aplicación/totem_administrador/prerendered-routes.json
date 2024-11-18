@@ -1,0 +1,26 @@
+{
+  "routes": [
+    "/",
+    "/collaborator",
+    "/faqs",
+    "/information",
+    "/login",
+    "/login/forgot-password",
+    "/login/reset-password",
+    "/maps",
+    "/menu",
+    "/news",
+    "/news-instagram",
+    "/profile",
+    "/profile/change-password",
+    "/profile/my-profile",
+    "/stats",
+    "/stats/admin",
+    "/stats/collaborator",
+    "/stats/faqs",
+    "/stats/information",
+    "/stats/maps",
+    "/stats/news",
+    "/users"
+  ]
+}

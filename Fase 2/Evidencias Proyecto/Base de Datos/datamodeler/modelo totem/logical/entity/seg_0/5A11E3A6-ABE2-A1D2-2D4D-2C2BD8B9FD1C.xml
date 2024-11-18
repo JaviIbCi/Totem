@@ -1,0 +1,84 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="5A11E3A6-ABE2-A1D2-2D4D-2C2BD8B9FD1C" name="score">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 01:06:16 UTC</createdTime>
+<ownerDesignName>modelo totem</ownerDesignName>
+<engineerTo>
+<item key="37452B28-5BF0-55E6-DE29-C95FB074FDC8" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_score" id="8C08AA92-8E21-D5FF-FF60-C1DFA2604C5D">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 01:06:16 UTC</createdTime>
+<ownerDesignName>modelo totem</ownerDesignName>
+<engineerTo>
+<item key="37452B28-5BF0-55E6-DE29-C95FB074FDC8" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>11</dataTypePrecision>
+<ownDataTypeParameters>,11,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="score_value" id="8072FBE8-7A2F-A348-8F71-AA521703A8CB">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 01:06:16 UTC</createdTime>
+<ownerDesignName>modelo totem</ownerDesignName>
+<engineerTo>
+<item key="37452B28-5BF0-55E6-DE29-C95FB074FDC8" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>1</dataTypePrecision>
+<ownDataTypeParameters>,1,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="score_details" id="D8FDF91F-6F42-9E20-59AC-5AAC41A83F74">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 01:06:16 UTC</createdTime>
+<ownerDesignName>modelo totem</ownerDesignName>
+<engineerTo>
+<item key="37452B28-5BF0-55E6-DE29-C95FB074FDC8" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="log_date" id="143D24D9-3B73-15A9-5F15-6A73CC853E98">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 01:06:16 UTC</createdTime>
+<ownerDesignName>modelo totem</ownerDesignName>
+<engineerTo>
+<item key="37452B28-5BF0-55E6-DE29-C95FB074FDC8" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="2698F15E-5C26-A510-DA06-A56712C62D4A" name="user_click_log PK">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 01:06:16 UTC</createdTime>
+<ownerDesignName>modelo totem</ownerDesignName>
+<engineerTo>
+<item key="37452B28-5BF0-55E6-DE29-C95FB074FDC8" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>8C08AA92-8E21-D5FF-FF60-C1DFA2604C5D</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

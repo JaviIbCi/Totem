@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="CD9F8F6C-727C-B708-1977-12B07B074C6A" containerWithKeyObject="5DFAA430-D481-DAC9-F4EE-7F2574592BE1" localFKIndex="3D3B7DF7-1202-3E18-CC87-3C17E12F173E" name="user_permission_collaborator_category_FK">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 02:27:07 UTC</createdTime>
+<generatorID>77C1E760-88BD-E7B6-8051-3AC7525F7872</generatorID>
+<ownerDesignName>modelo totem</ownerDesignName>
+<referredTableLongName>collaborator_category</referredTableLongName>
+<arc>BD84EC52-AE90-388A-EA64-97E18CA4480A</arc>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>FF432115-9D0A-34CC-25DE-D6EBF32B6BCE</referredTableID>
+<keyObject>CD90B6C0-8BE2-5991-58E8-4797AC4A8E0C</keyObject>
+<referredKeyID>CD90B6C0-8BE2-5991-58E8-4797AC4A8E0C</referredKeyID>
+<mandatory>false</mandatory>
+<refColNames>id_collaborator_cat</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

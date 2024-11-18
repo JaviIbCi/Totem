@@ -1,0 +1,73 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="D63247A1-03DE-782F-63BE-64B4FA0F539E" name="password_reset_request">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 01:59:20 UTC</createdTime>
+<ownerDesignName>modelo totem</ownerDesignName>
+<engineerTo>
+<item key="37452B28-5BF0-55E6-DE29-C95FB074FDC8" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_password_reset_request" id="B07F492F-5394-45E7-2181-F9493C5DAF95">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 01:59:38 UTC</createdTime>
+<ownerDesignName>modelo totem</ownerDesignName>
+<engineerTo>
+<item key="37452B28-5BF0-55E6-DE29-C95FB074FDC8" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>11</dataTypePrecision>
+<ownDataTypeParameters>,11,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="password_reset_request_Date" id="FC2D68E1-B3A0-3114-3B2B-BDBC1A0EFB60">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 01:59:37 UTC</createdTime>
+<ownerDesignName>modelo totem</ownerDesignName>
+<engineerTo>
+<item key="37452B28-5BF0-55E6-DE29-C95FB074FDC8" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_user" id="AF35C70B-59A0-C091-8328-76551EE05A92">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 02:00:03 UTC</createdTime>
+<generatorID>CFFF336B-0BA5-95C2-67F7-73B932906097</generatorID>
+<ownerDesignName>modelo totem</ownerDesignName>
+<engineerTo>
+<item key="37452B28-5BF0-55E6-DE29-C95FB074FDC8" value="true"/>
+</engineerTo>
+<referedAttribute>6F7F25BD-4982-1AC6-BAFD-70D82C526A6D</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>11</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="AA14FE68-27AE-A727-DC9D-BE83BE3AED1C" name="password_reset_request PK">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 01:59:50 UTC</createdTime>
+<ownerDesignName>modelo totem</ownerDesignName>
+<engineerTo>
+<item key="37452B28-5BF0-55E6-DE29-C95FB074FDC8" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>B07F492F-5394-45E7-2181-F9493C5DAF95</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

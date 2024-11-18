@@ -1,0 +1,124 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="220AAB4B-E837-1C7C-46A8-92D593F2AC26" name="user_permission">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 01:49:54 UTC</createdTime>
+<ownerDesignName>modelo totem</ownerDesignName>
+<engineerTo>
+<item key="37452B28-5BF0-55E6-DE29-C95FB074FDC8" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_user_permission" id="83B1400A-8FC0-1AD1-D39F-ACA5871C05A8">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 01:50:02 UTC</createdTime>
+<ownerDesignName>modelo totem</ownerDesignName>
+<engineerTo>
+<item key="37452B28-5BF0-55E6-DE29-C95FB074FDC8" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>11</dataTypePrecision>
+<ownDataTypeParameters>,11,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_permission" id="03BF3C68-1C0E-D329-6818-2033F2D5CB94">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 01:53:58 UTC</createdTime>
+<generatorID>AFA63A9B-BFA9-EFDD-3902-3539550742B6</generatorID>
+<ownerDesignName>modelo totem</ownerDesignName>
+<engineerTo>
+<item key="37452B28-5BF0-55E6-DE29-C95FB074FDC8" value="true"/>
+</engineerTo>
+<referedAttribute>417AD29A-F5D6-FACD-4B0E-36E547DA3396</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>11</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_collaborator_category" id="F5589F20-F563-B2C3-DDAB-07AA63BC7102">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 01:54:02 UTC</createdTime>
+<generatorID>28452AA2-EE0E-6DD0-60D7-6B81760DF90B</generatorID>
+<ownerDesignName>modelo totem</ownerDesignName>
+<engineerTo>
+<item key="37452B28-5BF0-55E6-DE29-C95FB074FDC8" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<referedAttribute>860CAF9F-1AD2-4A24-7560-A66040CF5173</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>11</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_information" id="314F9C70-BD4A-565A-D4FB-CD51F591A4CC">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 01:54:06 UTC</createdTime>
+<generatorID>C27A477F-13F8-1D19-91EC-FF025EA2BC22</generatorID>
+<ownerDesignName>modelo totem</ownerDesignName>
+<engineerTo>
+<item key="37452B28-5BF0-55E6-DE29-C95FB074FDC8" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<referedAttribute>14AA74B7-F7EF-E68E-E466-340E185716AF</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>11</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_faq_category" id="B56EA018-0594-0079-23BF-A9EF94BA5657">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 01:54:10 UTC</createdTime>
+<generatorID>B20998AD-34F0-ACEE-DF9A-7B9DBC3E4E0F</generatorID>
+<ownerDesignName>modelo totem</ownerDesignName>
+<engineerTo>
+<item key="37452B28-5BF0-55E6-DE29-C95FB074FDC8" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<referedAttribute>4B2FD698-4749-097F-8C23-3E297B5A75BC</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>11</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_user" id="77F24804-0E0C-3CA2-7DF9-42C2848A2C8A">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 01:56:45 UTC</createdTime>
+<generatorID>E2F847AF-8E29-54AA-5C58-EE546B5F2645</generatorID>
+<ownerDesignName>modelo totem</ownerDesignName>
+<engineerTo>
+<item key="37452B28-5BF0-55E6-DE29-C95FB074FDC8" value="true"/>
+</engineerTo>
+<referedAttribute>6F7F25BD-4982-1AC6-BAFD-70D82C526A6D</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>11</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="7797592A-365C-CF0B-5BEA-CA91653E1B11" name="user_permission PK">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 01:50:09 UTC</createdTime>
+<ownerDesignName>modelo totem</ownerDesignName>
+<engineerTo>
+<item key="37452B28-5BF0-55E6-DE29-C95FB074FDC8" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>83B1400A-8FC0-1AD1-D39F-ACA5871C05A8</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

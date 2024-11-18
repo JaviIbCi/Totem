@@ -1,0 +1,307 @@
+-- Creación de tablas
+
+CREATE TABLE `admin_log` (
+  `admin_log` INT(11) NOT NULL,
+  `log_action` VARCHAR(250) NOT NULL,
+  `log_component` VARCHAR(250) NOT NULL,
+  `log_details` VARCHAR(500) NOT NULL,
+  `log_user` VARCHAR(250) NOT NULL,
+  `log_object` VARCHAR(250) NOT NULL,
+  `log_date` DATETIME NOT NULL,
+  PRIMARY KEY (`admin_log`)
+);
+
+CREATE TABLE `collaborator` (
+  `id_collaborator` INT(11) NOT NULL,
+  `collaborator_first_name` VARCHAR(50) NOT NULL,
+  `collaborator_last_name` VARCHAR(50) NOT NULL,
+  `collaborator_role` VARCHAR(100) NOT NULL,
+  `collaborator_email` VARCHAR(150),
+  `collaborator_image_path` VARCHAR(255),
+  `collaborator_is_active` TINYINT(1) NOT NULL,
+  `id_collaborator_category` INT(11) NOT NULL,
+  PRIMARY KEY (`id_collaborator`)
+);
+
+CREATE TABLE `collaborator_category` (
+  `id_collaborator_cat` INT(11) NOT NULL,
+  `collaborator_cat_name` VARCHAR(100) NOT NULL,
+  `collaborator_cat_importance` INT(11) NOT NULL,
+  `id_group_cat_col` INT(11) NOT NULL,
+  PRIMARY KEY (`id_collaborator_cat`),
+  UNIQUE KEY `collaborator_category__UN` (`collaborator_cat_name`)
+);
+
+CREATE TABLE `collaborator_group_category` (
+  `id_group_cat_col` INT(11) NOT NULL,
+  `group_cat_col_name` VARCHAR(100) NOT NULL,
+  `group_cat_col_is_administrativ` TINYINT(1) NOT NULL,
+  `group_cat_col_importance` INT(11) NOT NULL,
+  PRIMARY KEY (`id_group_cat_col`),
+  UNIQUE KEY `collaborator_group_category__UN` (`group_cat_col_name`)
+);
+
+CREATE TABLE `collaborator_image` (
+  `id_collaborator_image` INT(11) NOT NULL,
+  `collaborator_image_original_name` VARCHAR(255) NOT NULL,
+  `collaborator_image_unique_name` VARCHAR(255) NOT NULL,
+  `collaborator_image_upload_date` DATETIME NOT NULL,
+  `collaborator_id_collaborator` INT(11),
+  PRIMARY KEY (`id_collaborator_image`),
+  UNIQUE KEY `collaborator_image__IDX` (`collaborator_id_collaborator`)
+);
+
+CREATE TABLE `faq` (
+  `id_faq` INT(11) NOT NULL,
+  `faq_question` VARCHAR(250) NOT NULL,
+  `faq_answer` VARCHAR(1000) NOT NULL,
+  `faq_is_active` TINYINT(1) NOT NULL,
+  `faq_importance` INT(11) NOT NULL,
+  `faq_category_id_faq_category` INT(11) NOT NULL,
+  PRIMARY KEY (`id_faq`)
+);
+
+CREATE TABLE `faq_category` (
+  `id_faq_category` INT(11) NOT NULL,
+  `faq_category_name` VARCHAR(100) NOT NULL,
+  `faq_category_importance` INT(11) NOT NULL,
+  PRIMARY KEY (`id_faq_category`),
+  UNIQUE KEY `faq_category__UN` (`faq_category_name`)
+);
+
+CREATE TABLE `information` (
+  `id_information` INT(11) NOT NULL,
+  `information_title` VARCHAR(250) NOT NULL,
+  `information_details` TEXT NOT NULL,
+  `information_is_active` TINYINT(1) NOT NULL,
+  `id_point_of_interest` INT(11),
+  `faq_category_id_faq_category` INT(11),
+  PRIMARY KEY (`id_information`),
+  UNIQUE KEY `information__UN` (`information_title`),
+  UNIQUE KEY `information__IDX` (`id_point_of_interest`)
+);
+
+CREATE TABLE `information_collaborator` (
+  `id_collaborator_category` INT(11) NOT NULL,
+  `id_information` INT(11) NOT NULL,
+  `info_cola_importance` INT(11) NOT NULL,
+  `info_cola_details` VARCHAR(250) NOT NULL,
+  PRIMARY KEY (`id_collaborator_category`, `id_information`)
+);
+
+CREATE TABLE `information_image` (
+  `id_information_image` INT(11) NOT NULL,
+  `information_image_importance` INT(11) NOT NULL,
+  `information_image_name` VARCHAR(250) NOT NULL,
+  `information_image_path` VARCHAR(255) NOT NULL,
+  `information_image_details` VARCHAR(500) NOT NULL,
+  `information_id_information` INT(11) NOT NULL,
+  PRIMARY KEY (`id_information_image`)
+);
+
+CREATE TABLE `map` (
+  `id_map` INT(11) NOT NULL,
+  `map_building` CHAR(1) NOT NULL,
+  `map_floor` TINYINT(1) NOT NULL,
+  `map_image_path` VARCHAR(255) NOT NULL,
+  PRIMARY KEY (`id_map`)
+);
+
+CREATE TABLE `news` (
+  `id_news` INT(11) NOT NULL,
+  `news_title` VARCHAR(250) NOT NULL,
+  `news_details` VARCHAR(500) NOT NULL,
+  `news_importance` INT(11) NOT NULL,
+  `news_link` VARCHAR(255) NOT NULL,
+  `news_is_active` TINYINT(1) NOT NULL,
+  `news_image_path` VARCHAR(255) NOT NULL,
+  PRIMARY KEY (`id_news`)
+);
+
+CREATE TABLE `password_reset_request` (
+  `id_password_reset_request` INT(11) NOT NULL,
+  `password_reset_request_Date` DATETIME NOT NULL,
+  `id_user` INT(11) NOT NULL,
+  PRIMARY KEY (`id_password_reset_request`)
+);
+
+CREATE TABLE `permission` (
+  `id_permission` INT(11) NOT NULL,
+  `permission_name` VARCHAR(250) NOT NULL,
+  `permission_details` VARCHAR(250) NOT NULL,
+  `permission_categorical` TINYINT(1) NOT NULL,
+  `id_permission_module` INT(11) NOT NULL,
+  `id_permission_type` INT(11) NOT NULL,
+  PRIMARY KEY (`id_permission`),
+  UNIQUE KEY `permission__UN` (`permission_name`)
+);
+
+CREATE TABLE `permission_module` (
+  `id_permission_module` INT(11) NOT NULL,
+  `permission_module_name` VARCHAR(50) NOT NULL,
+  PRIMARY KEY (`id_permission_module`),
+  UNIQUE KEY `permission_module__UN` (`permission_module_name`)
+);
+
+CREATE TABLE `permission_type` (
+  `id_permission_type` INT(11) NOT NULL,
+  `permission_type_name` VARCHAR(50) NOT NULL,
+  PRIMARY KEY (`id_permission_type`),
+  UNIQUE KEY `permission_type__UN` (`permission_type_name`)
+);
+
+CREATE TABLE `point_category` (
+  `id_point_category` INT(11) NOT NULL,
+  `point_category_name` VARCHAR(11) NOT NULL,
+  PRIMARY KEY (`id_point_category`)
+);
+
+CREATE TABLE `point_icon` (
+  `id_point_icon` INT(11) NOT NULL,
+  `point_icon_name` VARCHAR(100) NOT NULL,
+  `point_icon_path` VARCHAR(255) NOT NULL,
+  PRIMARY KEY (`id_point_icon`)
+);
+
+CREATE TABLE `point_of_interest` (
+  `id_point_of_interest` INT(11) NOT NULL,
+  `point_of_interest_name` VARCHAR(250) NOT NULL,
+  `point_of_interest_details` VARCHAR(500) NOT NULL,
+  `point_of_interest_coordinates` POINT NOT NULL,
+  `map_id_map` INT(11) NOT NULL,
+  `id_information` INT(11),
+  `id_point_category` INT(11) NOT NULL,
+  `id_point_icon` INT(11) NOT NULL,
+  PRIMARY KEY (`id_point_of_interest`),
+  UNIQUE KEY `point_of_interest__IDX` (`id_information`)
+) ENGINE=InnoDB;
+
+CREATE TABLE `score` (
+  `id_score` INT(11) NOT NULL,
+  `score_value` INT(1) NOT NULL,
+  `score_details` VARCHAR(50) NOT NULL,
+  `log_date` DATETIME NOT NULL,
+  PRIMARY KEY (`id_score`)
+);
+
+CREATE TABLE `token` (
+  `id_token` INT(11) NOT NULL,
+  `token_hash` VARCHAR(255) NOT NULL,
+  `token_type` VARCHAR(50) NOT NULL,
+  `token_created_date` DATETIME NOT NULL,
+  `token_expired_date` DATETIME NOT NULL,
+  `id_user` INT(11) NOT NULL,
+  PRIMARY KEY (`id_token`)
+);
+
+CREATE TABLE `user` (
+  `id_user` INT(11) NOT NULL,
+  `user_email` VARCHAR(250) NOT NULL,
+  `user_password_hash` VARCHAR(250) NOT NULL,
+  `user_is_bloqued` TINYINT(1) NOT NULL,
+  `user_falied_attempts` INT(2) NOT NULL,
+  PRIMARY KEY (`id_user`),
+  UNIQUE KEY `user__UN` (`user_email`)
+);
+
+CREATE TABLE `user_click_log` (
+  `id_user_click_log` INT(11) NOT NULL,
+  `component` VARCHAR(250) NOT NULL,
+  `selection` VARCHAR(250) NOT NULL,
+  `log_category_details` VARCHAR(500) NOT NULL,
+  `log_date` DATETIME NOT NULL,
+  PRIMARY KEY (`id_user_click_log`)
+);
+
+CREATE TABLE `user_permission` (
+  `id_user_permission` INT(11) NOT NULL,
+  `id_permission` INT(11) NOT NULL,
+  `id_user` INT(11) NOT NULL,
+  `information_id_information` INT(11),
+  `faq_category_id_faq_category` INT(11),
+  `collaborator_category_id_collaborator_cat` INT(11),
+  PRIMARY KEY (`id_user_permission`),
+  CHECK (
+    ((`collaborator_category_id_collaborator_cat` IS NOT NULL) AND (`information_id_information` IS NULL) AND (`faq_category_id_faq_category` IS NULL)) OR
+    ((`information_id_information` IS NOT NULL) AND (`collaborator_category_id_collaborator_cat` IS NULL) AND (`faq_category_id_faq_category` IS NULL)) OR
+    ((`faq_category_id_faq_category` IS NOT NULL) AND (`collaborator_category_id_collaborator_cat` IS NULL) AND (`information_id_information` IS NULL)) OR
+    ((`collaborator_category_id_collaborator_cat` IS NULL) AND (`information_id_information` IS NULL) AND (`faq_category_id_faq_category` IS NULL))
+  )
+);
+
+CREATE TABLE `user_search_log` (
+  `id_user_search_log` INT(11) NOT NULL,
+  `component` VARCHAR(250) NOT NULL,
+  `search_term` VARCHAR(250) NOT NULL,
+  `log_category_details` VARCHAR(500) NOT NULL,
+  `log_date` DATETIME NOT NULL,
+  PRIMARY KEY (`id_user_search_log`)
+);
+
+-- Agregar claves foráneas
+
+ALTER TABLE `collaborator_category`
+  ADD CONSTRAINT `collaborator_category_collaborator_group_category_FK` FOREIGN KEY (`id_group_cat_col`) REFERENCES `collaborator_group_category` (`id_group_cat_col`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+ALTER TABLE `collaborator`
+  ADD CONSTRAINT `collaborator_category_FK` FOREIGN KEY (`id_collaborator_category`) REFERENCES `collaborator_category` (`id_collaborator_cat`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+ALTER TABLE `collaborator_image`
+  ADD CONSTRAINT `collaborator_image_collaborator_FK` FOREIGN KEY (`collaborator_id_collaborator`) REFERENCES `collaborator` (`id_collaborator`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+ALTER TABLE `faq`
+  ADD CONSTRAINT `faq_faq_category_FK` FOREIGN KEY (`faq_category_id_faq_category`) REFERENCES `faq_category` (`id_faq_category`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+ALTER TABLE `information_collaborator`
+  ADD CONSTRAINT `information_collaborator_collaborator_category_FK` FOREIGN KEY (`id_collaborator_category`) REFERENCES `collaborator_category` (`id_collaborator_cat`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+ALTER TABLE `information_collaborator`
+  ADD CONSTRAINT `information_collaborator_information_FK` FOREIGN KEY (`id_information`) REFERENCES `information` (`id_information`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+ALTER TABLE `information`
+  ADD CONSTRAINT `information_faq_category_FK` FOREIGN KEY (`faq_category_id_faq_category`) REFERENCES `faq_category` (`id_faq_category`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+ALTER TABLE `information_image`
+  ADD CONSTRAINT `information_image_information_FK` FOREIGN KEY (`information_id_information`) REFERENCES `information` (`id_information`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+ALTER TABLE `information`
+  ADD CONSTRAINT `information_point_of_interest_FK` FOREIGN KEY (`id_point_of_interest`) REFERENCES `point_of_interest` (`id_point_of_interest`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+ALTER TABLE `password_reset_request`
+  ADD CONSTRAINT `password_reset_request_user_FK` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+ALTER TABLE `permission`
+  ADD CONSTRAINT `permission_permission_module_FK` FOREIGN KEY (`id_permission_module`) REFERENCES `permission_module` (`id_permission_module`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+ALTER TABLE `permission`
+  ADD CONSTRAINT `permission_permission_type_FK` FOREIGN KEY (`id_permission_type`) REFERENCES `permission_type` (`id_permission_type`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+ALTER TABLE `point_of_interest`
+  ADD CONSTRAINT `point_of_interest_information_FK` FOREIGN KEY (`id_information`) REFERENCES `information` (`id_information`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+ALTER TABLE `point_of_interest`
+  ADD CONSTRAINT `point_of_interest_map_FK` FOREIGN KEY (`map_id_map`) REFERENCES `map` (`id_map`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+ALTER TABLE `point_of_interest`
+  ADD CONSTRAINT `point_of_interest_point_category_FK` FOREIGN KEY (`id_point_category`) REFERENCES `point_category` (`id_point_category`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+ALTER TABLE `point_of_interest`
+  ADD CONSTRAINT `point_of_interest_point_icon_FK` FOREIGN KEY (`id_point_icon`) REFERENCES `point_icon` (`id_point_icon`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+ALTER TABLE `token`
+  ADD CONSTRAINT `token_user_FK` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+ALTER TABLE `user_permission`
+  ADD CONSTRAINT `user_permission_collaborator_category_FK` FOREIGN KEY (`collaborator_category_id_collaborator_cat`) REFERENCES `collaborator_category` (`id_collaborator_cat`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+ALTER TABLE `user_permission`
+  ADD CONSTRAINT `user_permission_faq_category_FK` FOREIGN KEY (`faq_category_id_faq_category`) REFERENCES `faq_category` (`id_faq_category`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+ALTER TABLE `user_permission`
+  ADD CONSTRAINT `user_permission_information_FK` FOREIGN KEY (`information_id_information`) REFERENCES `information` (`id_information`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+ALTER TABLE `user_permission`
+  ADD CONSTRAINT `user_permission_permission_FK` FOREIGN KEY (`id_permission`) REFERENCES `permission` (`id_permission`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+ALTER TABLE `user_permission`
+  ADD CONSTRAINT `user_permission_user_FK` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`) ON DELETE RESTRICT ON UPDATE RESTRICT;

@@ -1,0 +1,178 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="131BA4B3-4DF8-4FEE-33B1-AC6A4AA1E278" name="point_of_interest">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 02:03:18 UTC</createdTime>
+<generatorID>BE5A7968-41F7-89B4-38DD-58787B6018E8</generatorID>
+<ownerDesignName>modelo totem</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_point_of_interest" id="D4F89B60-CA9F-AC25-0115-74D9FFC779E2">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 02:03:18 UTC</createdTime>
+<generatorID>88C0969D-84E2-182F-741D-FD90020FC5BC</generatorID>
+<ownerDesignName>modelo totem</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>11</dataTypePrecision>
+<ownDataTypeParameters>,11,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="point_of_interest_name" id="F63EBA2E-2FC7-D8C7-143D-5A4F6F8886AF">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 02:03:18 UTC</createdTime>
+<generatorID>828DE64D-C74C-F115-F765-FBFFC1CA5B57</generatorID>
+<ownerDesignName>modelo totem</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>250</dataTypeSize>
+<ownDataTypeParameters>250,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="point_of_interest_details" id="77AE4D88-9478-2ABA-3B14-5E6507E86D1F">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 02:03:18 UTC</createdTime>
+<generatorID>7147D6D6-3DED-F354-CECD-0E2D5A359BED</generatorID>
+<ownerDesignName>modelo totem</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>500</dataTypeSize>
+<ownDataTypeParameters>500,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="point_of_interest_coordinates" id="883A1361-F372-FA38-78C7-90689FD5A2EB">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 02:03:18 UTC</createdTime>
+<generatorID>AC1EC81C-91C4-EE2C-7FF5-359FE1E1F705</generatorID>
+<ownerDesignName>modelo totem</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>3</use>
+<structuredType>47E390DE-0671-C4B1-8428-0F45CBEE18F8</structuredType>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="map_id_map" id="C894BEFD-CFFA-47CA-2650-5E12ECAA3B5F">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 02:03:18 UTC</createdTime>
+<generatorID>967C3991-F306-C50F-22BB-9D4005D1D5AF</generatorID>
+<ownerDesignName>modelo totem</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>11</dataTypePrecision>
+<ownDataTypeParameters>,11,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F2BA9653-F70C-C212-699B-5F3F3FDB2B46" referredColumn="8F6D2E7F-D3FF-8278-823F-CF145B584E00"/>
+</associations>
+</Column>
+<Column name="id_information" id="EA5BFBBA-1880-FB2A-F458-175DFDC20A74">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 02:03:18 UTC</createdTime>
+<generatorID>EDECB92A-16BC-E23C-C7A6-18FAB729EADD</generatorID>
+<ownerDesignName>modelo totem</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>11</dataTypePrecision>
+<ownDataTypeParameters>,11,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="6A924131-BDFF-A171-6E34-9121955A1F4C" referredColumn="2EAD00CE-0FBC-E6F8-7C02-B59DE99769BC"/>
+</associations>
+</Column>
+<Column name="id_point_category" id="604FF555-91C3-0EB5-5D09-D23265F7B96C">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 02:03:18 UTC</createdTime>
+<generatorID>78C421C7-D992-49E5-74ED-A69BD7B21E5D</generatorID>
+<ownerDesignName>modelo totem</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>11</dataTypePrecision>
+<ownDataTypeParameters>,11,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="id_point_icon" id="F1B90F91-4AE0-0021-4871-71A77953EE22">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 02:03:18 UTC</createdTime>
+<generatorID>FED6608E-1918-3E44-FCB3-A5D3EE973F9A</generatorID>
+<ownerDesignName>modelo totem</ownerDesignName>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>11</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="B012A9A6-2870-D5BC-989B-7BCE7B7BCEA5" referredColumn="E742BD8B-ABF9-B913-444B-78C08C8048AB"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="52913DE0-CE0F-6C29-2DAF-4FEEBEEA9324" name="point_of_interest_PK">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 02:03:18 UTC</createdTime>
+<generatorID>9050D6A0-F34C-C69B-E73E-83FB6C979FC7</generatorID>
+<ownerDesignName>modelo totem</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D4F89B60-CA9F-AC25-0115-74D9FFC779E2"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="23DCFB4E-3306-8FF4-A661-F03589BD88D3" name="point_of_interest__IDX">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 02:03:18 UTC</createdTime>
+<ownerDesignName>modelo totem</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>038546C6-2C99-7041-CA45-D721A7D8123D</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="EA5BFBBA-1880-FB2A-F458-175DFDC20A74"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="21C017C2-985B-FED2-C388-6401831EFAD7" name="point_of_interest_map_FK">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 02:03:18 UTC</createdTime>
+<generatorID>867358E4-EEC4-6E08-22D0-2997352A73A4</generatorID>
+<ownerDesignName>modelo totem</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C894BEFD-CFFA-47CA-2650-5E12ECAA3B5F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="5EBFE703-70C0-0986-C876-10967F3C3932" name="point_of_interest_information_FK">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 02:03:18 UTC</createdTime>
+<generatorID>038546C6-2C99-7041-CA45-D721A7D8123D</generatorID>
+<ownerDesignName>modelo totem</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="EA5BFBBA-1880-FB2A-F458-175DFDC20A74"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="79B4AC71-FF33-024B-1F77-4A3E616911A6" name="point_of_interest_point_icon_FK">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 02:03:18 UTC</createdTime>
+<generatorID>79A84C94-9854-8102-2E6C-5E8818BFE7DC</generatorID>
+<ownerDesignName>modelo totem</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F1B90F91-4AE0-0021-4871-71A77953EE22"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

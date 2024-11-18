@@ -1,0 +1,13 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKArc class="oracle.dbtools.crest.model.design.relational.FKArc" directorySegmentName="seg_0" id="BD84EC52-AE90-388A-EA64-97E18CA4480A" name="FKArc_2">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 02:27:23 UTC</createdTime>
+<ownerDesignName>modelo totem</ownerDesignName>
+<mandatory>false</mandatory>
+<table>5DFAA430-D481-DAC9-F4EE-7F2574592BE1</table>
+<fkeys>
+<fkeyID>CD9F8F6C-727C-B708-1977-12B07B074C6A</fkeyID>
+<fkeyID>2E2B64F6-F39D-D108-E35A-69D4536F8CD9</fkeyID>
+<fkeyID>34021DC1-F423-CAE0-B661-7A6FD87F5E07</fkeyID>
+</fkeys>
+</FKArc>

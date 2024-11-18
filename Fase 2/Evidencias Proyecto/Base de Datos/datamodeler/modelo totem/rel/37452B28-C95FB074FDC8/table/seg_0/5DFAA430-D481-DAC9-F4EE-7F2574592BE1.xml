@@ -1,0 +1,173 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="5DFAA430-D481-DAC9-F4EE-7F2574592BE1" name="user_permission">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 02:03:18 UTC</createdTime>
+<generatorID>220AAB4B-E837-1C7C-46A8-92D593F2AC26</generatorID>
+<ownerDesignName>modelo totem</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_user_permission" id="7E2BEF62-A982-FE9E-F060-7F54B769F182">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 02:03:18 UTC</createdTime>
+<generatorID>83B1400A-8FC0-1AD1-D39F-ACA5871C05A8</generatorID>
+<ownerDesignName>modelo totem</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>11</dataTypePrecision>
+<ownDataTypeParameters>,11,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="id_permission" id="1C383274-14BC-F5C1-35C6-BDE9692A182A">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 02:03:18 UTC</createdTime>
+<generatorID>03BF3C68-1C0E-D329-6818-2033F2D5CB94</generatorID>
+<ownerDesignName>modelo totem</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>11</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="6058FCE3-6A67-5BB2-A4CF-A193A31B6576" referredColumn="0A96A9FA-0FDF-80F2-EE00-66BB6D264A83"/>
+</associations>
+</Column>
+<Column name="id_user" id="91083B8B-28D8-5D4D-14EC-AF0D851C3F46">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 02:03:18 UTC</createdTime>
+<generatorID>77F24804-0E0C-3CA2-7DF9-42C2848A2C8A</generatorID>
+<ownerDesignName>modelo totem</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>11</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F6067F86-E4C9-5EEF-6C37-684F9041D74D" referredColumn="E334B376-52D4-2234-3DAC-4C1E90B8F1E3"/>
+</associations>
+</Column>
+<Column name="information_id_information" id="E958C871-7D9B-A121-9430-C0CD9CAC8EA4">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 02:26:55 UTC</createdTime>
+<ownerDesignName>modelo totem</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>11</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="2E2B64F6-F39D-D108-E35A-69D4536F8CD9" referredColumn="2EAD00CE-0FBC-E6F8-7C02-B59DE99769BC"/>
+</associations>
+</Column>
+<Column name="faq_category_id_faq_category" id="C017666E-F06B-2908-4962-4D6117CCFE2C">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 02:27:01 UTC</createdTime>
+<ownerDesignName>modelo totem</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>11</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="34021DC1-F423-CAE0-B661-7A6FD87F5E07" referredColumn="57900FB0-F78E-8B1A-0DF3-BFCE1047632C"/>
+</associations>
+</Column>
+<Column name="collaborator_category_id_collaborator_cat" id="C7822624-1433-CEE9-B3D2-958CEA78516B">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 02:27:07 UTC</createdTime>
+<ownerDesignName>modelo totem</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>11</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="CD9F8F6C-727C-B708-1977-12B07B074C6A" referredColumn="922E5E4A-7ABF-6E3B-54F9-825F190618F1"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="8E2BE759-CA46-2EC0-DABF-454CD1BA7C66" name="user_permission_PK">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 02:03:18 UTC</createdTime>
+<generatorID>7797592A-365C-CF0B-5BEA-CA91653E1B11</generatorID>
+<ownerDesignName>modelo totem</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7E2BEF62-A982-FE9E-F060-7F54B769F182"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="AB680406-EDD8-8A7A-ED1F-B6A09C5CB40C" name="user_permission_permission_FK">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 02:03:18 UTC</createdTime>
+<generatorID>AFA63A9B-BFA9-EFDD-3902-3539550742B6</generatorID>
+<ownerDesignName>modelo totem</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1C383274-14BC-F5C1-35C6-BDE9692A182A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="D6C46B11-DFCF-84A8-33DA-1CFCE89DEB82" name="user_permission_user_FK">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 02:03:18 UTC</createdTime>
+<generatorID>E2F847AF-8E29-54AA-5C58-EE546B5F2645</generatorID>
+<ownerDesignName>modelo totem</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="91083B8B-28D8-5D4D-14EC-AF0D851C3F46"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="44961A0E-CA83-AD33-6137-05274582391F" name="user_permission_information_FK">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 02:26:55 UTC</createdTime>
+<generatorID>73B2893A-4040-6443-14D4-85EE67B7D538</generatorID>
+<ownerDesignName>modelo totem</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E958C871-7D9B-A121-9430-C0CD9CAC8EA4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="4411D74B-A0BB-8932-4435-5CEFD27D44AA" name="user_permission_faq_category_FK">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 02:27:01 UTC</createdTime>
+<generatorID>72DFACAF-F0CA-D2D5-4869-0794A582A0A2</generatorID>
+<ownerDesignName>modelo totem</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C017666E-F06B-2908-4962-4D6117CCFE2C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="3D3B7DF7-1202-3E18-CC87-3C17E12F173E" name="user_permission_collaborator_category_FK">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 02:27:07 UTC</createdTime>
+<generatorID>77C1E760-88BD-E7B6-8051-3AC7525F7872</generatorID>
+<ownerDesignName>modelo totem</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C7822624-1433-CEE9-B3D2-958CEA78516B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="276B11B5-7EA0-1D8B-76C5-BB8AA0512E12" containerWithKeyObject="5E758035-92E0-FA3C-B03D-DD54D83BA52F" localFKIndex="6F9243D1-0AC3-1B13-0F79-5FF41ED6A0C2" name="password_reset_request_user_FK">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 02:03:18 UTC</createdTime>
+<generatorID>CFFF336B-0BA5-95C2-67F7-73B932906097</generatorID>
+<ownerDesignName>modelo totem</ownerDesignName>
+<referredTableLongName>user</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>AC16F514-3192-FD1F-8F5E-6E981FCC35A9</referredTableID>
+<keyObject>FF3DFB4D-AF66-D095-7862-9B23045ED4CD</keyObject>
+<referredKeyID>FF3DFB4D-AF66-D095-7862-9B23045ED4CD</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>id_user</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

@@ -1,0 +1,60 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="870DA548-80B2-E9B8-7429-D80CBDBAE357" name="permission_type">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 02:03:18 UTC</createdTime>
+<generatorID>86CE9345-D48E-8ADA-C89A-2AB9398DD8E9</generatorID>
+<ownerDesignName>modelo totem</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_permission_type" id="D38FC536-0C19-1928-B6E6-B0C1D3ACB006">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 02:03:18 UTC</createdTime>
+<generatorID>C7B35270-8B6E-53A4-D998-DB0B50935BF8</generatorID>
+<ownerDesignName>modelo totem</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>11</dataTypePrecision>
+<ownDataTypeParameters>,11,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="permission_type_name" id="467B0DEA-76BD-CD7E-6C4D-A5455747DFB4">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 02:03:18 UTC</createdTime>
+<generatorID>5FA6DC2F-B2B9-E367-3BB0-3E12CF7BE8A2</generatorID>
+<ownerDesignName>modelo totem</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="EFC8855F-8AD6-8387-9A0E-539820252906" name="permission_type_PK">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 02:03:18 UTC</createdTime>
+<generatorID>11613434-9C20-6A39-FE1F-4D3BC6BC9C98</generatorID>
+<ownerDesignName>modelo totem</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D38FC536-0C19-1928-B6E6-B0C1D3ACB006"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="AFC34C3A-7661-A555-8C90-83A60CF2F9A5" name="permission_type__UN">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 02:21:48 UTC</createdTime>
+<ownerDesignName>modelo totem</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="467B0DEA-76BD-CD7E-6C4D-A5455747DFB4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

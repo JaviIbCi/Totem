@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="954205FC-47D1-BE1B-1F81-47CD8C86A47A" containerWithKeyObject="3DA103F8-AE51-6C53-1F17-ED2978EE0B95" localFKIndex="4B070D48-BB1E-7CDE-F313-A31DC60FC4C1" name="faq_faq_category_FK">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 02:03:18 UTC</createdTime>
+<generatorID>F218870C-4C79-9368-F37B-F80ADAA86AF9</generatorID>
+<ownerDesignName>modelo totem</ownerDesignName>
+<referredTableLongName>faq_category</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>CD5B32B3-51DB-B170-7B46-478E1F24CBAF</referredTableID>
+<keyObject>7C1CC736-4A43-C915-68B7-93360031067D</keyObject>
+<referredKeyID>7C1CC736-4A43-C915-68B7-93360031067D</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>id_faq_category</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="5346CB81-39EE-BF53-8372-4FB4DC49D50D" containerWithKeyObject="363A23B2-9248-CE4D-3A52-D2AA9C58BADC" localFKIndex="A4310F3A-4AD6-8838-341D-C0849E23F208" name="permission_permission_module_FK">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 02:03:18 UTC</createdTime>
+<generatorID>FD202809-75E2-95C8-5A77-46BEC80E1019</generatorID>
+<ownerDesignName>modelo totem</ownerDesignName>
+<referredTableLongName>permission_module</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>4ED2039A-8C82-4EF2-DB48-9C6F218772AE</referredTableID>
+<keyObject>0ECBA538-2DB5-E173-2F68-42E6A3AF3536</keyObject>
+<referredKeyID>0ECBA538-2DB5-E173-2F68-42E6A3AF3536</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>id_permission_module</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

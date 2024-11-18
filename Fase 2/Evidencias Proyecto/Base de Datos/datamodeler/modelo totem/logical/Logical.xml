@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<LogicalDesign class="oracle.dbtools.crest.model.design.logical.LogicalDesign" name="Logical" id="B0895CF3-5AE2-EF9D-9542-8679E752EDC8" mainViewID="13C83F3E-67D8-D1DD-8FF3-EA052CEBB7E5">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 01:03:31 UTC</createdTime>
+<ownerDesignName>modelo totem</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+</LogicalDesign>

@@ -1,0 +1,99 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="FF432115-9D0A-34CC-25DE-D6EBF32B6BCE" name="collaborator_category">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 02:03:18 UTC</createdTime>
+<generatorID>32CA5ECF-A5ED-C8FA-D0E1-EA6A7BEBCD6E</generatorID>
+<ownerDesignName>modelo totem</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_collaborator_cat" id="922E5E4A-7ABF-6E3B-54F9-825F190618F1">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 02:03:18 UTC</createdTime>
+<generatorID>860CAF9F-1AD2-4A24-7560-A66040CF5173</generatorID>
+<ownerDesignName>modelo totem</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>11</dataTypePrecision>
+<ownDataTypeParameters>,11,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="collaborator_cat_name" id="491667BB-34B2-5C01-D249-CB64D3B6696F">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 02:03:18 UTC</createdTime>
+<generatorID>7FF408A5-3311-02C0-9408-83F2F1DEB741</generatorID>
+<ownerDesignName>modelo totem</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="collaborator_cat_importance" id="65C86FB9-8784-CE75-AAB3-9DBE7B7A2D46">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 02:03:18 UTC</createdTime>
+<generatorID>7C5CDCE7-2E72-7CB8-7845-47DBB6648650</generatorID>
+<ownerDesignName>modelo totem</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>11</dataTypePrecision>
+<ownDataTypeParameters>,11,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="id_group_cat_col" id="4C42656D-A9BC-6C11-8079-8358F96CF963">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 02:03:18 UTC</createdTime>
+<generatorID>812E3B48-434A-75FC-4091-35D721830BA1</generatorID>
+<ownerDesignName>modelo totem</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>11</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="1BB3876C-8F54-A1AE-CF1C-20C2CF9FC55F" referredColumn="75FC60AC-99D6-D7BE-6F29-B53C789F1FD7"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="CD90B6C0-8BE2-5991-58E8-4797AC4A8E0C" name="collaborator_category_PK">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 02:03:18 UTC</createdTime>
+<generatorID>77C1E760-88BD-E7B6-8051-3AC7525F7872</generatorID>
+<ownerDesignName>modelo totem</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="922E5E4A-7ABF-6E3B-54F9-825F190618F1"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A96BF52A-99F5-5D69-6E52-159958FEE3ED" name="collaborator_category__UN">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 02:22:55 UTC</createdTime>
+<ownerDesignName>modelo totem</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="491667BB-34B2-5C01-D249-CB64D3B6696F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="6E73FC85-CFF5-4B4E-770C-8DF0037A4EA1" name="collaborator_category_collaborator_group_category_FK">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 02:03:18 UTC</createdTime>
+<generatorID>027A6D20-7862-80D1-472F-147CFC235F8B</generatorID>
+<ownerDesignName>modelo totem</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4C42656D-A9BC-6C11-8079-8358F96CF963"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

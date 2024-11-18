@@ -1,0 +1,105 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="8B883E7F-238D-87BD-02DD-2AED568935A1" name="information_collaborator">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 02:03:18 UTC</createdTime>
+<generatorID>89536E2C-7414-5C96-7107-74FBB8AD4ACF</generatorID>
+<ownerDesignName>modelo totem</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_collaborator_category" id="B6BE13A2-05CD-AC2C-BC92-94FB58956DA3">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 02:03:18 UTC</createdTime>
+<generatorID>AFF6AA51-50D4-8597-0471-ACCE6BAC1275</generatorID>
+<ownerDesignName>modelo totem</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>11</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E6A5F92F-7E00-F782-60C1-42BDB9224F3E" referredColumn="922E5E4A-7ABF-6E3B-54F9-825F190618F1"/>
+</associations>
+</Column>
+<Column name="id_information" id="43101E0C-2EFF-A28E-0383-1010E61D90B7">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 02:03:18 UTC</createdTime>
+<generatorID>32BBB683-DF9C-4025-EB73-24B623F83848</generatorID>
+<ownerDesignName>modelo totem</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>11</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="D3A550B4-F7E6-F8BE-1F05-A417609F1470" referredColumn="2EAD00CE-0FBC-E6F8-7C02-B59DE99769BC"/>
+</associations>
+</Column>
+<Column name="info_cola_importance" id="F6DA5B92-EBED-2A4E-9446-189B9C5CEBB7">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 02:03:18 UTC</createdTime>
+<generatorID>4AEB445D-DCE7-05CD-29BC-60FCE0A44559</generatorID>
+<ownerDesignName>modelo totem</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>11</dataTypePrecision>
+<ownDataTypeParameters>,11,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="info_cola_details" id="406B157C-275E-8EF1-68DE-48AE68F75F9E">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 02:03:18 UTC</createdTime>
+<generatorID>0F7580B8-FBBD-3439-8A7B-DB5C8D5241F0</generatorID>
+<ownerDesignName>modelo totem</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>250</dataTypeSize>
+<ownDataTypeParameters>250,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="5458182D-DC8E-5FF0-183A-6EF2DC0FA2A5" name="information_collaborator_PK">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 02:03:18 UTC</createdTime>
+<generatorID>D5C36519-D8EA-1C75-30EB-376628F25FA7</generatorID>
+<ownerDesignName>modelo totem</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B6BE13A2-05CD-AC2C-BC92-94FB58956DA3"/>
+<colUsage columnID="43101E0C-2EFF-A28E-0383-1010E61D90B7"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="CC34A394-F518-A648-09AC-36C6EC149DEE" name="information_collaborator_collaborator_category_FK">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 02:03:18 UTC</createdTime>
+<generatorID>EE76203B-27EB-0791-3E77-2DA079201D0B</generatorID>
+<ownerDesignName>modelo totem</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B6BE13A2-05CD-AC2C-BC92-94FB58956DA3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="098172C5-4847-A914-FCDF-405258C7D15B" name="information_collaborator_information_FK">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 02:03:18 UTC</createdTime>
+<generatorID>551A2238-BD1E-A2DC-CF83-A013EEBD32A1</generatorID>
+<ownerDesignName>modelo totem</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="43101E0C-2EFF-A28E-0383-1010E61D90B7"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,149 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="27A7174D-5C79-9EF3-A036-7F375B0FA1B9" name="information">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 02:03:18 UTC</createdTime>
+<generatorID>E427C797-ADDB-335C-8FA1-0C780E0A7A90</generatorID>
+<ownerDesignName>modelo totem</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_information" id="2EAD00CE-0FBC-E6F8-7C02-B59DE99769BC">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 02:03:18 UTC</createdTime>
+<generatorID>14AA74B7-F7EF-E68E-E466-340E185716AF</generatorID>
+<ownerDesignName>modelo totem</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>11</dataTypePrecision>
+<ownDataTypeParameters>,11,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="information_title" id="C839353A-B651-F2CF-5834-E3A4164CEFBF">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 02:03:18 UTC</createdTime>
+<generatorID>751A6226-9092-5246-87D0-81CB1F79A34A</generatorID>
+<ownerDesignName>modelo totem</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>250</dataTypeSize>
+<ownDataTypeParameters>250,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="information_details" id="A2EC9DCB-F97A-F8F8-C28D-90C91B571F0E">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 02:03:18 UTC</createdTime>
+<generatorID>398D00F3-214A-2F41-F923-76419D0B576A</generatorID>
+<ownerDesignName>modelo totem</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT040</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="information_is_active" id="66AEF1DA-7617-4693-201F-495DD94374F9">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 02:03:18 UTC</createdTime>
+<generatorID>7312DBD2-1EEB-9A8D-25F1-BB8746B7B5CD</generatorID>
+<ownerDesignName>modelo totem</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="id_point_of_interest" id="A8739581-B1CD-DE65-1E50-D274F30726E7">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 02:03:18 UTC</createdTime>
+<generatorID>72E39658-6BB7-E614-D796-4868A8933699</generatorID>
+<ownerDesignName>modelo totem</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>11</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="905B572B-3D34-262E-79A5-0A50A8450382" referredColumn="D4F89B60-CA9F-AC25-0115-74D9FFC779E2"/>
+</associations>
+</Column>
+<Column name="faq_category_id_faq_category" id="9A91242B-A069-65F2-5350-DC30CFC70013">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 02:26:06 UTC</createdTime>
+<ownerDesignName>modelo totem</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>11</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="EFC3C42C-7504-6DA9-E817-81EB6BF5668B" referredColumn="57900FB0-F78E-8B1A-0DF3-BFCE1047632C"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="737CEE53-4A7D-D2A8-56C8-967B1ED68334" name="information_PK">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 02:03:18 UTC</createdTime>
+<generatorID>73B2893A-4040-6443-14D4-85EE67B7D538</generatorID>
+<ownerDesignName>modelo totem</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2EAD00CE-0FBC-E6F8-7C02-B59DE99769BC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="4348951D-9CA0-B772-98F4-E12802090A73" name="information__UN">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 02:23:23 UTC</createdTime>
+<ownerDesignName>modelo totem</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C839353A-B651-F2CF-5834-E3A4164CEFBF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="27979D1B-762E-300B-BE99-2E75D76D0FA8" name="information__IDX">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 02:03:18 UTC</createdTime>
+<ownerDesignName>modelo totem</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>038546C6-2C99-7041-CA45-D721A7D8123D</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="A8739581-B1CD-DE65-1E50-D274F30726E7"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="5F1644D8-CA14-2AA2-6FE1-B3244185FABC" name="information_point_of_interest_FK">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 02:03:18 UTC</createdTime>
+<generatorID>038546C6-2C99-7041-CA45-D721A7D8123D</generatorID>
+<ownerDesignName>modelo totem</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A8739581-B1CD-DE65-1E50-D274F30726E7"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="90F1630D-01F0-EBF9-4E94-720D71686804" name="information_faq_category_FK">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 02:26:06 UTC</createdTime>
+<generatorID>72DFACAF-F0CA-D2D5-4869-0794A582A0A2</generatorID>
+<ownerDesignName>modelo totem</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9A91242B-A069-65F2-5350-DC30CFC70013"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

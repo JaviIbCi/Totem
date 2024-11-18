@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Relation_32" directorySegmentName="seg_0" id="80209026-C25E-7526-3DAD-C4F292D7BB55">
+<createdBy>micky</createdBy>
+<createdTime>2024-11-11 01:25:22 UTC</createdTime>
+<ownerDesignName>modelo totem</ownerDesignName>
+<engineerTo>
+<item key="37452B28-5BF0-55E6-DE29-C95FB074FDC8" value="true"/>
+</engineerTo>
+<sourcePk>F6406279-9F8D-D128-FA5F-5D4AC0A74D35</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>278DBB17-75A7-7E62-0DB5-C12276EC0D74</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>BE5A7968-41F7-89B4-38DD-58787B6018E8</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

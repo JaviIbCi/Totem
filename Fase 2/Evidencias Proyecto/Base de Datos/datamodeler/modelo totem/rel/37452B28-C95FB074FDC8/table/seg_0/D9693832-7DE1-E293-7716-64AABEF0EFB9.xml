@@ -1,0 +1,112 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="D9693832-7DE1-E293-7716-64AABEF0EFB9" name="collaborator_image">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 02:03:18 UTC</createdTime>
+<generatorID>909834C8-1F84-FCC8-005E-A891570841D9</generatorID>
+<ownerDesignName>modelo totem</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_collaborator_image" id="D7BCE183-F62D-CFBE-55D2-02E4DEDB1BA7">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 02:03:18 UTC</createdTime>
+<generatorID>A9044EA6-FF36-BA8D-966B-077A9D5F6B61</generatorID>
+<ownerDesignName>modelo totem</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>11</dataTypePrecision>
+<ownDataTypeParameters>,11,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="collaborator_image_original_name" id="B367CBDA-869A-CD7E-2B24-554C0C2D954B">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 02:03:18 UTC</createdTime>
+<generatorID>EA25E64B-0605-740D-177D-93F85C5721A3</generatorID>
+<ownerDesignName>modelo totem</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="collaborator_image_unique_name" id="97B3441F-9ED0-61D3-0C43-6C302E85A8EE">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 02:03:18 UTC</createdTime>
+<generatorID>FD68C388-5232-5C4D-442B-C666D32B0738</generatorID>
+<ownerDesignName>modelo totem</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="collaborator_image_upload_date" id="15844342-EA1E-138C-3501-682A785FCCFD">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 02:03:18 UTC</createdTime>
+<generatorID>8E13BAA1-28A6-3EC2-4F23-E610DC8A1B5A</generatorID>
+<ownerDesignName>modelo totem</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="collaborator_id_collaborator" id="A012A660-ECD3-4AE3-C6C8-5604A7887D1D">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 02:03:18 UTC</createdTime>
+<generatorID>3E54E1D6-3A4E-6E91-E58F-EFBBE604D4AD</generatorID>
+<ownerDesignName>modelo totem</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>11</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="77A82151-5C1F-50A5-A2D7-6102F40EF9E5" referredColumn="2F5CCFC8-E2D1-BEC0-533F-5125216694F3"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="0996465C-A4B5-5DDA-B956-5730A9D39BE6" name="collaborator_image_PK">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 02:03:18 UTC</createdTime>
+<generatorID>30979A8E-F8F4-7F7A-3F57-42BE190A3962</generatorID>
+<ownerDesignName>modelo totem</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D7BCE183-F62D-CFBE-55D2-02E4DEDB1BA7"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="C209D807-D199-DF98-9A9D-280EFE51CA0B" name="collaborator_image__IDX">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 02:03:18 UTC</createdTime>
+<ownerDesignName>modelo totem</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>FE581B76-1F96-C191-C9E9-246FC220F5CD</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="A012A660-ECD3-4AE3-C6C8-5604A7887D1D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="D8FE90A6-73D8-940A-78EB-34A1E999AF0A" name="collaborator_image_collaborator_FK">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 02:03:18 UTC</createdTime>
+<generatorID>FE581B76-1F96-C191-C9E9-246FC220F5CD</generatorID>
+<ownerDesignName>modelo totem</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A012A660-ECD3-4AE3-C6C8-5604A7887D1D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

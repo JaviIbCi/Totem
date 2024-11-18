@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="D3A550B4-F7E6-F8BE-1F05-A417609F1470" containerWithKeyObject="8B883E7F-238D-87BD-02DD-2AED568935A1" localFKIndex="098172C5-4847-A914-FCDF-405258C7D15B" name="information_collaborator_information_FK">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 02:03:18 UTC</createdTime>
+<generatorID>551A2238-BD1E-A2DC-CF83-A013EEBD32A1</generatorID>
+<ownerDesignName>modelo totem</ownerDesignName>
+<referredTableLongName>information</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>27A7174D-5C79-9EF3-A036-7F375B0FA1B9</referredTableID>
+<keyObject>737CEE53-4A7D-D2A8-56C8-967B1ED68334</keyObject>
+<referredKeyID>737CEE53-4A7D-D2A8-56C8-967B1ED68334</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>id_information</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

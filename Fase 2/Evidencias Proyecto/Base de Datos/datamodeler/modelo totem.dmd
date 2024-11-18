@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="modelo totem" id="999CB5C8-8C11-B4A1-6025-CDCAEFFDECFF" version="3.5">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 01:03:31 UTC</createdTime>
+<ownerDesignName>modelo totem</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>999CB5C8-8C11-B4A1-6025-CDCAEFFDECFF</designId>
+</OSDM_Design>

@@ -1,0 +1,138 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="363A23B2-9248-CE4D-3A52-D2AA9C58BADC" name="permission">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 02:03:18 UTC</createdTime>
+<generatorID>243906BD-47E8-D179-49EB-27EFDF8C52B5</generatorID>
+<ownerDesignName>modelo totem</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_permission" id="0A96A9FA-0FDF-80F2-EE00-66BB6D264A83">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 02:03:18 UTC</createdTime>
+<generatorID>417AD29A-F5D6-FACD-4B0E-36E547DA3396</generatorID>
+<ownerDesignName>modelo totem</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>11</dataTypePrecision>
+<ownDataTypeParameters>,11,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="permission_name" id="A2245FC5-CA6E-737B-9D8F-20B1CF62D6B5">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 02:03:18 UTC</createdTime>
+<generatorID>95755F41-546F-D567-A9CE-8AC9A9D6DA8A</generatorID>
+<ownerDesignName>modelo totem</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>250</dataTypeSize>
+<ownDataTypeParameters>250,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="permission_details" id="D4ECEC2F-9204-8741-FE48-94184B7068C6">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 02:03:18 UTC</createdTime>
+<generatorID>C5BE79B6-5763-B8C7-49A2-26DA6984664F</generatorID>
+<ownerDesignName>modelo totem</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>250</dataTypeSize>
+<ownDataTypeParameters>250,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="permission_categorical" id="15701017-688C-362F-6264-3D66D2F88931">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 02:03:18 UTC</createdTime>
+<generatorID>BACCC068-429A-70E4-E5C9-6F7FA962749F</generatorID>
+<ownerDesignName>modelo totem</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="id_permission_module" id="03AA809D-A398-37B8-5639-4E103E93F2FF">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 02:03:18 UTC</createdTime>
+<generatorID>4A79D9EB-B476-896D-660D-ECEE18051135</generatorID>
+<ownerDesignName>modelo totem</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>11</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="5346CB81-39EE-BF53-8372-4FB4DC49D50D" referredColumn="B53AE1C7-22AF-4CE2-738C-3E24B67BFB83"/>
+</associations>
+</Column>
+<Column name="id_permission_type" id="92528795-03D9-5306-3100-DA7FD9D3B376">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 02:03:18 UTC</createdTime>
+<generatorID>B1EE5256-4556-C3DD-DE21-942097E7F7AA</generatorID>
+<ownerDesignName>modelo totem</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>11</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="7536149D-40C2-0740-1F96-F038BA108557" referredColumn="D38FC536-0C19-1928-B6E6-B0C1D3ACB006"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="40B16674-EBFA-A848-C292-A02D844298D7" name="permission_PK">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 02:03:18 UTC</createdTime>
+<generatorID>CF037297-C982-9C87-E869-38D509DD9488</generatorID>
+<ownerDesignName>modelo totem</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0A96A9FA-0FDF-80F2-EE00-66BB6D264A83"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="712DDCD7-EA20-B567-54E1-FB31FC0A9E95" name="permission__UN">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 02:07:53 UTC</createdTime>
+<ownerDesignName>modelo totem</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A2245FC5-CA6E-737B-9D8F-20B1CF62D6B5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A4310F3A-4AD6-8838-341D-C0849E23F208" name="permission_permission_module_FK">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 02:03:18 UTC</createdTime>
+<generatorID>FD202809-75E2-95C8-5A77-46BEC80E1019</generatorID>
+<ownerDesignName>modelo totem</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="03AA809D-A398-37B8-5639-4E103E93F2FF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="D3B90F0C-3E6D-7D79-B55F-5E6CDF4160A1" name="permission_permission_type_FK">
+<createdBy>micky</createdBy>
+<createdTime>2024-10-14 02:03:18 UTC</createdTime>
+<generatorID>6995F44B-2F28-A781-CE99-BDE458953686</generatorID>
+<ownerDesignName>modelo totem</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="92528795-03D9-5306-3100-DA7FD9D3B376"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
