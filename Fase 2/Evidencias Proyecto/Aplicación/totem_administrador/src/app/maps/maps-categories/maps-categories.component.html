@@ -1,0 +1,9 @@
+ 
+<div *ngFor="let building of buildings | keyvalue" class="building-container">
+  <h2>{{ building.key }}</h2>
+  <div class="floor-buttons">
+    <button *ngFor="let floor of building.value" (click)="navigateToMap(floor.id)">
+      Piso {{ floor.floor }}
+    </button>
+  </div>
+</div>

@@ -1,0 +1,422 @@
+@font-face {
+  font-family: 'Merriweather';
+  src: url('/assets/Merriweather/Merriweather-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Merriweather';
+  src: url('/assets/Merriweather/Merriweather-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Merriweather';
+  src: url('/assets/Merriweather/Merriweather-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Merriweather';
+  src: url('/assets/Merriweather/Merriweather-BoldItalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Merriweather';
+  src: url('/assets/Merriweather/Merriweather-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Merriweather';
+  src: url('/assets/Merriweather/Merriweather-LightItalic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Merriweather';
+  src: url('/assets/Merriweather/Merriweather-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Merriweather';
+  src: url('/assets/Merriweather/Merriweather-BlackItalic.ttf') format('truetype');
+  font-weight: 900;
+  font-style: italic;
+}
+
+/* Removed the .fondo class to allow the background image from app.component.css to take effect */
+.alto {
+  min-height: 860px;
+  height: 90vh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* Evita que la página principal tenga scroll */
+}
+
+ 
+
+/* General Styles for the component */
+:host {
+  font-family: 'Merriweather', serif;
+  font-size: 12px; /* Base font size */
+  color: #000000; /* Terciario */
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+/* Typography Styles */
+h1 {
+  font-weight: 700; /* Bold */
+  font-size: 2.6875rem;
+  text-align: center; /* Centered title */
+  color: #000000; /* Terciario */
+  margin-top: 20px;
+}
+
+h3 {
+  font-weight: 700; /* Bold */
+  font-size: 1.5rem;
+  text-align: center; /* Centered subtitle */
+  color: #000000; /* Terciario */
+  margin-top: 20px;
+}
+
+/* Main Content */
+main {
+  flex-grow: 1;
+  display: flex;
+  overflow-y: auto;
+  padding-bottom: 100px;
+  flex-direction: column;
+}
+
+/* Containers */
+.categories-container,
+.questions-container {
+  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
+  border: 2px solid #666666; /* Solid 2px border */
+  border-radius:50px; /* Rounded borders */
+  margin: 20px 5%;
+  padding: 20px;
+
+}
+.questions-container {
+  min-height: 600px;
+  height: calc(80vh-600);
+  overflow-y: auto; /* Permite scroll vertical */
+  overflow-x: hidden; /* Oculta el desbordamiento horizontal */
+  margin-bottom: 50px;
+  padding-bottom: 50px;
+  border-radius: 50px; /* Bordes redondeados */
+  background-color: rgba(255, 255, 255, 0.8); /* Fondo semitransparente */
+  
+  /* Aplica el redondeo a los contenidos con el contenedor */
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+  mask-image: radial-gradient(white, black);
+  
+  /* Asegura el borde del contenedor al moverse */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+.clear-filter-button {
+  display: flex;
+  align-items: center;
+}
+
+/* Category Buttons */
+.category-btn {
+  background-color: #FFFFFF; /* White */
+  border: 2px solid #FFB800; /* Gray border */
+  color: #000000; /* Gray text */
+  border-radius: 50px;
+  padding: 10px 30px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.category-btn.active,
+.category-btn:hover {
+  background-color: #e69e1d; /* Fondo negro al hacer hover */
+    color: #FFFFFF; /* Texto blanco al hacer hover */
+}
+
+.btn-clear:hover {
+  background-color: #e69e1d; /* Fondo negro al hacer hover */
+  color: #FFFFFF; /* Texto blanco al hacer hover */
+}
+
+/* Search Bar */
+.search-input {
+  flex: 1; /* Ocupa el espacio disponible */
+  border: 2px solid #FFB800; /* Bordes del mismo color que el botón */
+  border-right: none; /* Elimina el borde derecho para fusionar con el botón */
+  border-radius: 30px 0 0 30px; /* Bordes redondeados solo en la izquierda */
+  padding: 10px 15px;
+  font-size: 16px;
+  height: 48px;
+  outline: none; /* Sin borde azul al hacer focus */
+}
+
+/* Accordion */
+.accordion {
+  width: 100%;
+  margin: 20px auto;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.accordion-item {
+  background-color: #FFFFFF; /* White */
+  border: 2px solid #FFB800; /* Gray border */
+  border-radius: 15px;
+  margin-bottom: 10px;
+}
+
+.accordion-header {
+  background-color: #666666; /* Gray */
+  color: #FFFFFF; /* White */
+  padding: 15px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 15px 15px 0 0;
+}
+
+/* Center the category buttons */
+.button-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+/* Adjust the category buttons if needed */
+.category-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+/* Style the search input and clear button container */
+.search-and-clear {
+  display: flex;
+  align-items: center;
+  gap: 0; /* Sin espacio entre los elementos */
+}
+
+/* Adjust the search input to flex */
+.search-input {
+  flex: 1; /* Ocupa el espacio disponible */
+  border: 2px solid #FFB800; /* Bordes del mismo color que el botón */
+  border-right: none; /* Elimina el borde derecho para fusionar con el botón */
+  border-radius: 30px 0 0 30px; /* Bordes redondeados solo en la izquierda */
+  padding: 10px 15px;
+  font-size: 16px;
+  outline: none; /* Sin borde azul al hacer focus */
+}
+
+/* Adjust the clear button */
+.btn-clear {
+  border: 2px solid #FFB800; /* Misma altura del borde */
+  border-left: none; /* Elimina el borde izquierdo para fusionar con el input */
+  border-radius: 0 30px 30px 0; /* Bordes redondeados solo en la derecha */
+  background-color: #FFFFFF; /* Fondo blanco */
+  color: #666666; /* Texto gris */
+  padding: 10px 20px;
+  height: 48px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Smooth 1-second animation for accordion content */
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: all 1s ease;
+  opacity: 0;
+  padding: 0 15px; /* Ensure padding is consistent */
+}
+
+.accordion-content.active {
+  max-height: 1000px; /* A large enough value to accommodate content */
+  opacity: 1;
+  padding: 15px;
+}
+
+
+/* Separator */
+.separator {
+  height: 2px;
+  background-color: #666666;
+  margin: 20px 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 850px) {
+  h1, h3 {
+    font-size: 1.8rem;
+  }
+
+  .category-btn,
+  .btn-clear {
+    font-size: 12px;
+    padding: 8px 20px;
+
+  }
+  .btn-clear{
+    height: 41px;
+  }
+  .category-btn{
+    margin-bottom: 20px;
+  }
+  .accordion-header {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .search-input {
+    font-size: 14px;
+    padding: 8px 10px;
+  }
+  .questions-container{
+    padding-bottom: 50px;
+    margin-bottom: 500px;
+  }
+}
+
+/* Totem Mode Styles */
+@media (min-width: 2160px) and (min-height: 3840px) {
+  h1 {
+    font-size: 100px;
+    margin-top: 40px;
+  }
+  .questions-container{
+   height: 62vh;
+   max-height: 62vh;
+  }
+  h3 {
+    font-size: 80px;
+    margin-top: 40px;
+  }
+
+  .category-btn {
+    font-size: 70px;
+    padding: 20px 60px;
+    border-radius: 50px;
+    margin-bottom: 30px;
+  }
+
+  .button-container {
+    gap: 30px;
+    margin-top: 40px;
+  }
+
+  .search-and-clear {
+    display: flex;
+    align-items: center;
+    gap: 0; /* Elimina el espacio entre el input y el botón */
+    margin-top: 40px;
+  }
+
+  .search-input {
+    font-size: 50px;
+    padding: 20px 30px;
+    border: 2px solid #FFB800; /* Bordes del mismo color que el botón */
+    border-right: none; /* Elimina el borde derecho para unir con el botón */
+    border-radius: 30px 0 0 30px; /* Bordes redondeados solo a la izquierda */
+    flex: 1; /* Hace que el input ocupe el espacio disponible */
+    height: 150px;
+  }
+
+  .btn-clear {
+    border: 2px solid #FFB800; /* Misma altura del borde */
+    border-left: none; /* Elimina el borde izquierdo para unir con el input */
+    border-radius: 0 30px 30px 0; /* Bordes redondeados solo a la derecha */
+    background-color: #FFFFFF; /* Fondo blanco */
+    color: #000000; /* Texto gris */
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-size: 50px;
+    padding: 20px 40px;
+    height: 150px; /* Misma altura que el input */
+  }
+
+  .btn-clear:hover {
+    background-color: #e69e1d; /* Fondo negro al hacer hover */
+    color: #FFFFFF; /* Texto blanco al hacer hover */
+  }
+
+  .accordion-header {
+    font-size: 70px;
+    padding: 20px 30px;
+    border-radius: 30px 30px 0 0;
+  }
+
+  .accordion-content {
+    font-size: 50px;
+    padding: 20px 30px;
+    border-radius: 0 0 30px 30px;
+  }
+
+  .accordion-content.active {
+    max-height: 1000px;
+  }
+
+  /* Keyboard Styles */
+  .simple-keyboard {
+    display: block !important;
+    z-index: 9999 !important;
+    position: fixed !important;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1000px;
+    background-color: #FFFFFF; /* White */
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Class to hide the keyboard when not visible */
+  .hidden {
+    visibility: hidden;
+    height: 0;
+    overflow: hidden;
+  }
+
+  /* Close button styles */
+  .close-button {
+    position: absolute;
+    top: 2300px;
+    right: 50px;
+    background-color: rgba(255, 0, 0, 0.26);
+    color: #FFFFFF; /* White */
+    border: none;
+    border-radius: 50%;
+    width: 250px;
+    height: 250px;
+    font-size: 100px;
+    line-height: 50px;
+    text-align: center;
+    cursor: pointer;
+  }
+}

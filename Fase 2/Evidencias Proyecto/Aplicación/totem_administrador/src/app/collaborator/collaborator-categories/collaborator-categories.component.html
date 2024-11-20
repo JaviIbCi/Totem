@@ -1,0 +1,456 @@
+<div class="title">
+  <h1>Colaboradores</h1>
+</div>
+
+<!-- Botón para abrir el modal de subir archivo -->
+<button (click)="openExcelModal()">Subir colaboradores ⬆️</button>
+
+<!-- Botón para descargar el listado de colaboradores -->
+<button (click)="confirmDownload()">Descargar listado de colaboradores ⬇️</button>
+
+<!-- Botón para agrear nuevo grupo de categoría de colaboradores -->
+<button (click)="addGroupCategory()">Agregar Grupo ➕</button>
+
+<!-- Modal para subir archivo -->
+<div class="modal-overlay" *ngIf="isModalOpen">
+  <div class="modal-content">
+    <h2>Subir Archivo de Colaboradores</h2>
+
+    <!-- Input de selección de archivo -->
+    <input type="file" (change)="onExcelFileSelected($event)" accept=".xlsx" />
+
+    <!-- Botón para enviar los datos después de la selección y validación -->
+    <button class="upex" (click)="confirmUpload()">Subir archivo</button>
+    <!-- Botón de cierre del modal -->
+    <button class="upex" (click)="closeExcelModal()">Cancelar ❌</button>
+  </div>
+</div>
+
+<!-- Mensaje de éxito -->
+<div *ngIf="successMessage" class="success-message">
+  {{ successMessage }}
+</div>
+
+<div *ngIf="isAddingGroupCategory" class="modal-overlay">
+  <div class="modal-content">
+    <h3>Agregar Nuevo Grupo de Categoría</h3>
+
+    <!-- Campo de entrada para el nombre de la nueva categoría de grupo -->
+    <input
+      type="text"
+      [(ngModel)]="newGroupCategory.name"
+      placeholder="Nombre de la categoría"
+    />
+
+    <!-- Selección del tipo de grupo (Administrativo o Docente) -->
+    <div class="select">
+      <label>
+        <input
+          type="radio"
+          name="groupType"
+          [(ngModel)]="newGroupCategory.type"
+          [value]="true"
+        />
+        Administrativo
+      </label>
+      <label>
+        <input
+          type="radio"
+          name="groupType"
+          [(ngModel)]="newGroupCategory.type"
+          [value]="false"
+        />
+        Docente
+      </label>
+    </div>
+
+    <!-- Mensaje de error si existe -->
+    <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
+
+    <!-- Botón para guardar la nueva categoría, llama a saveNewGroupCategory() -->
+    <button (click)="saveNewGroupCategory()" class="addg">Guardar 💾</button>
+
+    <!-- Botón para cancelar la acción, llama a cancelAddingGroup() -->
+    <button (click)="cancelAddingGroup()" class="addg">Cancelar ❌</button>
+  </div>
+</div>
+
+
+<hr class="custom-line" />
+<!-- Encabezado de la sección de docentes -->
+<div class="subtitle">
+  <h2 class="sub"><strong>DOCENTES 📒 </strong></h2>
+</div>
+<hr class="custom-line" />
+<div
+  class="group-category-list"
+  cdkDropList
+  (cdkDropListDropped)="drop($event)"
+>
+  <div class="categories">
+    <!-- Itera sobre cada categoría de grupo en groupCategories y aplica cdkDrag para hacer los elementos arrastrables -->
+    <div
+      *ngFor="let groupcategory of groupCategories"
+      class="group-category"
+      cdkDrag
+    >
+      <!-- Solo muestra categorías que no son administrativas -->
+      <ng-container *ngIf="!groupcategory.is_administrative">
+        <div class="group-category-item" cdkDrag>
+          <div class="grupo">
+            <div class="handle">
+              <h2>
+                <span class="drag-handle" cdkDragHandle>⋮</span>
+                {{ groupcategory.group_category_name }}
+              </h2>
+            </div>
+
+            <div class="btn-gr">
+              <!-- Botón para editar la categoría de grupo de colaboradores -->
+              <button (click)="openEditModal(groupcategory.id_group_category)">
+                Editar ✏️
+              </button>
+              <!-- Botón para abrir el modal de agregar subcategoría, llama a openAddCategoryModal() -->
+              <button
+                (click)="openAddCategoryModal(groupcategory.id_group_category)"
+              >
+                Agregar Categoría ➕
+              </button>
+              <!-- Botón para eliminar la categoría de grupo, llama a prepareDeleteGroupCategory() -->
+              <button
+                class="delete"
+                (click)="
+                  prepareDeleteGroupCategory(groupcategory.id_group_category)
+                "
+              >
+                Eliminar 🗑️
+              </button>
+            </div>
+
+            <div
+              *ngIf="
+                isEditingGroupCategory &&
+                selectedGroupCategoryId === groupcategory.id_group_category
+              "
+              class="modal-overlay"
+            >
+              <div class="modal-content">
+                <h3>Editar Categoría de Grupo</h3>
+                <!-- Campo de entrada para actualizar el nombre de la categoría de grupo -->
+                <input
+                  type="text"
+                  [(ngModel)]="editGroupCategoryData.name"
+                  placeholder="Nuevo nombre de la categoría"
+                />
+                <!-- Mensaje de error si existe -->
+                <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
+                <!-- Botón para guardar la actualización -->
+                <button (click)="updateGroupCategory()">Guardar 💾</button>
+                <!-- Botón para cerrar el modal sin guardar -->
+                <button (click)="closeEditModal()">Cancelar ❌</button>
+              </div>
+            </div>
+
+            <div
+              *ngIf="
+                isAddingCategory &&
+                selectedGroupCategoryId === groupcategory.id_group_category
+              "
+              class="modal-overlay"
+            >
+              <div class="modal-content">
+                <h5>
+                  Agregar Nueva Categoría a
+                  {{ groupcategory.group_category_name }}
+                </h5>
+                <!-- Campo de entrada para el nombre de la nueva subcategoría -->
+                <input
+                  type="text"
+                  [(ngModel)]="newCategory.name"
+                  placeholder="Nombre de la categoría"
+                />
+                <!-- Mensaje de error si existe -->
+                <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
+                <!-- Botón para guardar la subcategoría -->
+                <button (click)="saveNewCategory()">Guardar 💾</button>
+                <!-- Botón para cancelar la acción -->
+                <button (click)="closeAddCategoryModal()">Cancelar ❌</button>
+              </div>
+            </div>
+
+            <div class="card">
+              <!-- Itera sobre cada subcategoría en el grupo actual usando getCategoriesByGroupId() -->
+              <div
+                *ngFor="
+                  let category of getCategoriesByGroupId(
+                    groupcategory.id_group_category
+                  )
+                "
+                class="category-card"
+                cdkDropList
+                (cdkDropListDropped)="dropCategory($event)"
+              >
+                <!-- Muestra el nombre de la subcategoría o "Sin nombre" si está vacío -->
+                <h3>
+                  {{ category.collaborator_category_name || "Sin nombre" }}
+                </h3>
+                <div class="btn-cat">
+                  <!-- Botón para ver los colaboradores de la subcategoría, llama a navigateToCollaborators() -->
+                  <button
+                    (click)="
+                      navigateToCollaborators(category.id_collaborator_category)
+                    "
+                  >
+                    Colaboradores 👥
+                  </button>
+
+                  <!-- Botón para editar la categoría, llama a openEditCategoryModal() -->
+                  <button (click)="openEditCategoryModal(category)">
+                    Editar ✏️
+                  </button>
+                  <!-- Botón para eliminar la subcategoría, llama a deleteCategory() -->
+                  <button
+                    class="delete"
+                    (click)="deleteCategory(category.id_collaborator_category)"
+                  >
+                    Eliminar 🗑️
+                  </button>
+                  <!-- Modal para editar la subcategoría -->
+                  <div
+                    *ngIf="
+                      editingCategoryId === category.id_collaborator_category
+                    "
+                    class="modal-overlay"
+                  >
+                    <div class="modal-content">
+                      <h3>Editar Nombre de la Categoría</h3>
+                      <!-- Campo de entrada para el nuevo nombre de la categoría -->
+                      <input
+                        type="text"
+                        [(ngModel)]="editCategoryData.name"
+                        placeholder="Nuevo nombre de la categoría"
+                        id="editCategoryName-{{
+                          category.id_collaborator_category
+                        }}"
+                        name="editCategoryName"
+                      />
+
+                      <!-- Mensaje de error si existe -->
+                      <p *ngIf="errorMessage" class="error">
+                        {{ errorMessage }}
+                      </p>
+                      <!-- Botón para guardar los cambios -->
+                      <button (click)="saveCategoryChanges()">
+                        Guardar 💾
+                      </button>
+                      <!-- Botón para cancelar la edición -->
+                      <button (click)="closeEditCategoryModal()">
+                        Cancelar ❌
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Mensaje que aparece si el grupo no tiene subcategorías -->
+              <p
+                *ngIf="
+                  getCategoriesByGroupId(groupcategory.id_group_category)
+                    .length === 0
+                "
+              >
+                No hay categorías en este grupo.
+              </p>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</div>
+
+<hr class="custom-line" />
+
+<!-- Encabezado de la sección de administrativos -->
+<div class="subtitle">
+  <h2 class="sub"><strong>ADMINISTRATIVOS 🗂️ </strong></h2>
+</div>
+<hr class="custom-line" />
+<div
+  class="group-category-list mat-no-styling"
+  cdkDropList
+  (cdkDropListDropped)="drop($event)"
+>
+  <div class="categories">
+    <div
+      *ngFor="let groupcategory of groupCategories"
+      class="group-category-item mat-no-styling"
+      cdkDrag
+    >
+      <!-- Solo muestra categorías que son administrativas -->
+      <div *ngIf="groupcategory.is_administrative">
+        <div class="grupo">
+          <h2>
+            <div class="handle mat-no-styling">
+              <span class="drag-handle" cdkDragHandle>⋮</span>
+              {{ groupcategory.group_category_name }}
+              >
+            </div>
+          </h2>
+
+          <br />
+          <div class="btn-gr mat-no-styling">
+            <button (click)="openEditModal(groupcategory.id_group_category)">
+              Editar ✏️
+            </button>
+            <!-- Modal para editar la categoría de grupo -->
+            <div
+              *ngIf="
+                isEditingGroupCategory &&
+                selectedGroupCategoryId === groupcategory.id_group_category
+              "
+              class="modal-overlay"
+            >
+              <div class="modal-content">
+                <h3>Editar Categoría de Grupo</h3>
+                <!-- Campo de entrada para actualizar el nombre de la categoría de grupo -->
+                <input
+                  type="text"
+                  [(ngModel)]="editGroupCategoryData.name"
+                  placeholder="Nuevo nombre de la categoría"
+                />
+                <!-- Mensaje de error si existe -->
+                <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
+                <!-- Botón para guardar la actualización -->
+                <button (click)="updateGroupCategory()">Guardar 💾</button>
+                <!-- Botón para cerrar el modal sin guardar -->
+                <button (click)="closeEditModal()">Cancelar ❌</button>
+              </div>
+            </div>
+            <!-- Botón para abrir el modal de agregar subcategoría en un grupo administrativo -->
+            <button
+              (click)="openAddCategoryModal(groupcategory.id_group_category)"
+            >
+              Agregar Categoría ➕
+            </button>
+
+            <!-- Modal para agregar una nueva subcategoría en grupo administrativo -->
+            <div
+              *ngIf="
+                isAddingCategory &&
+                selectedGroupCategoryId === groupcategory.id_group_category
+              "
+              class="modal-overlay"
+            >
+              <div class="modal-content">
+                <h5>
+                  Agregar Nueva Categoría a
+                  {{ groupcategory.group_category_name }}
+                </h5>
+                <input
+                  type="text"
+                  [(ngModel)]="newCategory.name"
+                  placeholder="Nombre de la categoría"
+                />
+                <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
+                <button (click)="saveNewCategory()">Guardar 💾</button>
+                <button (click)="closeAddCategoryModal()">Cancelar ❌</button>
+              </div>
+            </div>
+
+            <!-- Botón para eliminar la categoría de grupo, llama a prepareDeleteGroupCategory() -->
+            <button
+              class="delete"
+              (click)="
+                prepareDeleteGroupCategory(groupcategory.id_group_category)
+              "
+            >
+              Eliminar 🗑️
+            </button>
+          </div>
+
+          <div class="card mat-no-styling">
+            <!-- Itera sobre cada subcategoría en el grupo administrativo -->
+            <div
+              *ngFor="
+                let category of getCategoriesByGroupId(
+                  groupcategory.id_group_category
+                )
+              "
+              class="category-card mat-no-styling"
+              cdkDropList
+              (cdkDropListDropped)="dropCategory($event)"
+              cdkDrag
+            >
+              <span
+                ><h3>
+                  {{ category.collaborator_category_name || "Sin nombre" }}
+                </h3></span
+              >
+
+              <div class="btn-cat">
+                <button
+                  (click)="
+                    navigateToCollaborators(category.id_collaborator_category)
+                  "
+                >
+                  Colaboradores 👥
+                </button>
+                <!-- Botón para editar la categoría, llama a openEditCategoryModal() -->
+                <button (click)="openEditCategoryModal(category)">
+                  Editar ✏️
+                </button>
+                <button
+                  class="delete"
+                  (click)="deleteCategory(category.id_collaborator_category)"
+                >
+                  Eliminar 🗑️
+                </button>
+                <!-- Modal para editar la subcategoría -->
+                <div
+                  *ngIf="
+                    editingCategoryId === category.id_collaborator_category
+                  "
+                  class="modal-overlay"
+                >
+                  <div class="modal-content">
+                    <h3>Editar Nombre de la Categoría</h3>
+                    <!-- Campo de entrada para el nuevo nombre de la categoría -->
+                    <input
+                      type="text"
+                      [(ngModel)]="editCategoryData.name"
+                      placeholder="Nuevo nombre de la categoría"
+                      id="editCategoryName-{{
+                        category.id_collaborator_category
+                      }}"
+                      name="editCategoryName"
+                    />
+
+                    <!-- Mensaje de error si existe -->
+                    <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
+                    <!-- Botón para guardar los cambios -->
+                    <button (click)="saveCategoryChanges()">Guardar 💾</button>
+                    <!-- Botón para cancelar la edición -->
+                    <button (click)="closeEditCategoryModal()">
+                      Cancelar❌
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Mensaje que aparece si no hay subcategorías en el grupo -->
+            <p
+              *ngIf="
+                getCategoriesByGroupId(groupcategory.id_group_category)
+                  .length === 0
+              "
+            >
+              No hay categorías en este grupo.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,8 +1,0 @@
-{
-  "routes": [
-    "/",
-    "/colaboradores",
-    "/mapa",
-    "/preguntas-frecuentes"
-  ]
-}

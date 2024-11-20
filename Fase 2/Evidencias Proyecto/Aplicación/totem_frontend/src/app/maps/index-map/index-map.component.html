@@ -1,0 +1,338 @@
+<!-- index-map.component.html -->
+<div class="map-page fondo">
+
+  <!-- Sección de controles superiores (botones de pisos y barra de búsqueda) -->
+  <div class="controls-container">
+    <!-- Botones de pisos -->
+   <!-- Botones de pisos -->
+<div class="floor-buttons-container">
+  <!-- Pisos del edificio Sede Principal -->
+  <div class="building-floors sede-floors">
+    <h2>Sede Principal</h2>
+    <div class="floor-buttons">
+      <button 
+        (click)="selectFloor('Sede Principal', 1)" 
+        [ngClass]="{'active': isActiveFloor('Sede Principal', 1)}">
+        Piso 1
+      </button>
+      <button 
+        (click)="selectFloor('Sede Principal', 5)" 
+        [ngClass]="{'active': isActiveFloor('Sede Principal', 5)}">
+        Piso 5
+      </button>
+      <button 
+        (click)="selectFloor('Sede Principal', 6)" 
+        [ngClass]="{'active': isActiveFloor('Sede Principal', 6)}">
+        Piso 6
+      </button>
+      <button 
+        (click)="selectFloor('Sede Principal', 7)" 
+        [ngClass]="{'active': isActiveFloor('Sede Principal', 7)}">
+        Piso 7
+      </button>
+    </div>
+  </div>
+
+  <!-- Pisos del edificio Boulevard -->
+  <div class="building-floors boulevard-floors">
+    <h2>Boulevard</h2>
+    <div class="floor-buttons">
+      <button 
+        (click)="selectFloor('Edificio Boulevard', 1)" 
+        [ngClass]="{'active': isActiveFloor('Edificio Boulevard', 1)}">
+        Piso 1
+      </button>
+      <button 
+        (click)="selectFloor('Edificio Boulevard', 2)" 
+        [ngClass]="{'active': isActiveFloor('Edificio Boulevard', 2)}">
+        Piso 2
+      </button>
+      <button 
+        (click)="selectFloor('Edificio Boulevard', 3)" 
+        [ngClass]="{'active': isActiveFloor('Edificio Boulevard', 3)}">
+        Piso 3
+      </button>
+    </div>
+  </div>
+</div>
+
+
+    <!-- Barra de búsqueda -->
+    <div class="search-bar-container" (click)="stopPropagation($event)">
+      <input
+        #searchInput
+        type="text"
+        placeholder="Buscar punto de interés..."
+        [(ngModel)]="searchQuery"
+        (input)="search(searchQuery)"
+        (focus)="openVirtualKeyboard()"
+      />
+      <!-- Lista de sugerencias -->
+      <div class="search-suggestions" *ngIf="filteredSuggestions.length > 0">
+        <ul>
+          <li class="sugerencias" *ngFor="let suggestion of filteredSuggestions" (click)="goToPOI(suggestion.point_name)">
+            {{ suggestion.point_name }}
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+  </div>
+
+  <!-- Contenedor principal: fila con mapa y leyendas -->
+  <div class="row content-container">
+    
+    <!-- Columna izquierda: Mapa (80%) -->
+    <div class="col map-column">
+      <!-- Contenedor del mapa -->
+      <div class="map-container">
+        <div
+          class="svg-wrapper"
+          (mousedown)="onMouseDown($event)"
+          (mousemove)="onMouseMove($event)"
+          (mouseup)="onMouseUp($event)"
+          (mouseleave)="onMouseLeave($event)"
+          (wheel)="onWheel($event)"
+          style="overflow: hidden;"
+        >
+          <svg
+            [attr.width]="svgWidth"
+            [attr.height]="svgHeight"
+            [attr.viewBox]="'0 0 ' + svgWidth + ' ' + svgHeight"
+          >
+            <g
+              [attr.transform]="
+                'translate(' +
+                panOffsetX +
+                ',' +
+                panOffsetY +
+                ') scale(' +
+                zoomLevel / 100 +
+                ')'
+              "
+              style="transform-origin: top left;"
+            >
+              <!-- Imagen del mapa -->
+              <image
+                *ngIf="mapImageUrl"
+                [attr.href]="mapImageUrl"
+                x="0"
+                y="0"
+                [attr.width]="imageWidth"
+                [attr.height]="imageHeight"
+              ></image>
+
+              <!-- Puntos de interés -->
+              <ng-container *ngFor="let poi of filteredPoints; let i = index">
+                <!-- Categoría 4: Zona de Conexión -->
+                <ng-container *ngIf="poi.categoryId == 4">
+                  <rect
+                    [attr.x]="poi.x"
+                    [attr.y]="poi.y"
+                    [attr.width]="poi.width"
+                    [attr.height]="poi.height"
+                    fill="rgba(128, 128, 128, 0.0)"
+                    [style.cursor]="'pointer'"
+                    (click)="onPOIClick(poi)"
+                  ></rect>
+                </ng-container>
+
+                <!-- Categoría 3: Área Buscada -->
+                <ng-container *ngIf="poi.categoryId == 3">
+                  <rect
+                    [attr.x]="poi.x"
+                    [attr.y]="poi.y"
+                    [attr.width]="poi.width"
+                    [attr.height]="poi.height"
+                    [attr.fill]="poi.color || 'rgba(128, 128, 128, 0.9)'"
+
+
+                    [style.cursor]="'pointer'"
+                    (click)="onPOIClick(poi)"
+                  ></rect>
+                  <text
+                    [attr.x]="poi.x + poi.width / 2"
+                    [attr.y]="poi.y + poi.height / 2"
+                    text-anchor="middle"
+                    dominant-baseline="middle"
+                    [style.cursor]="'pointer'"
+                    (click)="onPOIClick(poi)"
+                    fill="black"
+                    font-size="14"
+                  >
+                    {{ poi.point_name }}
+                  </text>
+                </ng-container>
+
+                <!-- Categoría 1: Punto de Interés Visible Único -->
+                <ng-container *ngIf="poi.categoryId == 1">
+                  <g>
+                    <rect
+                      [attr.x]="poi.x - poi.width / 2"
+                      [attr.y]="poi.y - poi.height / 2"
+                      [attr.width]="poi.width"
+                      [attr.height]="poi.height"
+                      rx="50%"
+                      stroke="black"
+                      stroke-width="2"
+                      [attr.fill]="poi.color || 'lightgray'"
+                      [style.cursor]="'pointer'"
+                      (click)="onPOIClick(poi)"
+                      (mouseenter)="onMouseEnterPOI(poi)"
+                      (mouseleave)="onMouseLeavePOI(poi)"
+                    ></rect>
+                    <text
+                      [attr.x]="poi.x"
+                      [attr.y]="poi.y - poi.height * 0.2 + poi.height * 0.4"
+                      font-family="'Material Icons'"
+                      [attr.font-size]="poi.height * 0.8"
+                      text-anchor="middle"
+                      dominant-baseline="middle"
+                      [style.cursor]="'pointer'"
+                      (click)="onPOIClick(poi)"
+                      (mouseenter)="onMouseEnterPOI(poi)"
+                      (mouseleave)="onMouseLeavePOI(poi)"
+                    >
+                      {{ poi.iconName }}
+                    </text>
+                  </g>
+                </ng-container>
+              </ng-container>
+
+              <!-- Burbuja para el título del POI -->
+              <g *ngIf="bubbleTitle">
+                <rect
+                  [attr.x]="bubbleX"
+                  [attr.y]="bubbleY"
+                  [attr.width]="bubbleWidth"
+                  [attr.height]="bubbleHeight"
+                  rx="10"
+                  ry="10"
+                  fill="white"
+                  stroke="black"
+                  stroke-width="1"
+                ></rect>
+
+                <!-- Cola de la burbuja -->
+                <polygon
+                  [attr.points]="getBubbleTailPoints(bubbleX + bubbleWidth / 2, bubbleY + bubbleHeight, bubbleTailHeight)"
+                  fill="white"
+                  stroke="black"
+                  stroke-width="1"
+                ></polygon>
+
+                <!-- Texto del título -->
+                <text
+                  [attr.x]="bubbleX + bubbleWidth / 2"
+                  [attr.y]="bubbleY + bubbleHeight / 2 + 3"
+                  text-anchor="middle"
+                  dominant-baseline="middle"
+                  font-size="14"
+                  fill="black"
+                >
+                  {{ bubbleTitle }}
+                </text>
+              </g>
+              <g *ngIf="selectedBubbleTitle">
+                <!-- Fondo de la burbuja -->
+                <rect
+                [attr.x]="selectedBubbleX"
+                [attr.y]="selectedBubbleY"
+                [attr.width]="selectedBubbleWidth"
+                [attr.height]="selectedBubbleHeight"
+                rx="10"
+                ry="10"
+                fill="white"
+                stroke="black"
+                stroke-width="1"
+                ></rect>
+          
+                <!-- Cola de la burbuja -->
+                <polygon
+                [attr.points]="getBubbleTailPoints(selectedBubbleX + selectedBubbleWidth / 2, selectedBubbleY + selectedBubbleHeight, selectedBubbleTailHeight)"
+                fill="white"
+                stroke="black"
+                stroke-width="1"
+                ></polygon>
+          
+                <!-- Texto del título -->
+                <text
+                [attr.x]="selectedBubbleX + selectedBubbleWidth / 2"
+                [attr.y]="selectedBubbleY + selectedBubbleHeight / 2 + 3"
+                text-anchor="middle"
+                dominant-baseline="middle"
+                font-size="14"
+                fill="black"
+                >
+                {{ selectedBubbleTitle }}
+                </text>
+                </g>
+                <circle
+                *ngIf="highlightedPoint"
+                [attr.cx]="highlightedPoint.x"
+                [attr.cy]="highlightedPoint.y"
+                [attr.r]="highlightedRadius"
+                [attr.fill]="'none'"
+                [attr.stroke]="'rgba(0, 51, 102, 0.9)'"
+                [attr.stroke-width]="'4'"
+                [class.pulse]="isPulseActive"
+              ></circle>
+              <rect
+              *ngIf="isSquareHighlightActive && highlightedSquarePoint"
+              [attr.x]="highlightedSquarePoint.x"
+              [attr.y]="highlightedSquarePoint.y"
+              [attr.width]="highlightedSquarePoint.width"
+              [attr.height]="highlightedSquarePoint.height"
+              [attr.fill]="'none'"
+              [attr.stroke]="'rgba(0, 51, 102, 0.9)'"
+              [attr.stroke-width]="'3'"
+              [class.square-pulse]="true"
+              ></rect>
+              </g>
+              <!-- Rectángulo animado para destacar un POI cuadrado -->
+              
+
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- Columna derecha: Leyendas (20%) -->
+  <!-- Columna derecha: Leyendas (20%) -->
+  <div class="col legend-column">
+    <div class="legend-container">
+      <h3>Leyendas</h3>
+      <div class="legend-grid" *ngIf="pointsLeyend.length > 0; else noLegends">
+        <div
+          class="legend-card"
+          *ngFor="let legend of pointsLeyend"
+          (click)="legendMethod(legend)" 
+        >
+          <div class="icon">
+            <span class="icono" style="font-family: 'Material Icons'; ">
+              {{ legend.iconName }}
+            </span>
+          </div>
+          <div class="legend-info">
+            <p class="legend-title">{{ legend.point_name }}</p>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Template para mostrar "No hay leyendas" -->
+      <ng-template #noLegends>
+        <p class="no-legends-text">No hay leyendas</p>
+      </ng-template>
+    </div>
+  </div>
+  
+
+
+  </div>
+  <div *ngIf="isKeyboardVisible" class="keyboard-container">
+    <!-- Close Button -->
+    <button class="close-button" (click)="closeVirtualKeyboard()">X</button>
+    <!-- Virtual Keyboard -->
+    <div id="keyboard" class="simple-keyboard"></div>
+  </div>
+</div>

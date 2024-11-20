@@ -1,0 +1,433 @@
+@font-face {
+  font-family: 'Merriweather';
+  src: url('/assets/Merriweather/Merriweather-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Merriweather';
+  src: url('/assets/Merriweather/Merriweather-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Merriweather';
+  src: url('/assets/Merriweather/Merriweather-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Merriweather';
+  src: url('/assets/Merriweather/Merriweather-BoldItalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Merriweather';
+  src: url('/assets/Merriweather/Merriweather-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Merriweather';
+  src: url('/assets/Merriweather/Merriweather-LightItalic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Merriweather';
+  src: url('/assets/Merriweather/Merriweather-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Merriweather';
+  src: url('/assets/Merriweather/Merriweather-BlackItalic.ttf') format('truetype');
+  font-weight: 900;
+  font-style: italic;
+}
+
+/* Aplicar la fuente a todo el documento */
+body {
+  font-family: 'Merriweather', serif; /* Estilo predeterminado para todo el sitio */
+}
+
+/* Header Styles */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid var(--institutional-yellow);
+  padding: 1rem;
+  background-color: var(--dark-bg);
+  color: var(--text-white);
+  font-family: 'Merriweather', serif; /* Estilo predeterminado para todo el sitio */
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.logo-navbar {
+  width: 250px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Navbar Styles */
+
+/* Desktop Navbar */
+.desktop-nav {
+  display: flex;
+  gap: 1rem;
+}
+
+.desktop-nav a {
+  display: flex; /* Activar flexbox */
+  justify-content: center; /* Centrar horizontalmente */
+  align-items: center; /* Centrar verticalmente */
+  width: 100%;
+  text-align: center;
+  text-decoration: none;
+  color: var(--text-white);
+  padding: 10px 15px;
+  border-radius: 25px;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.desktop-nav a:hover {
+  background-color: var(--text-white);
+  color: var(--dark-bg);
+}
+
+/* Mobile Navbar */
+.navbar-toggler {
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1100;
+  color: var(--text-white);
+}
+
+.navbar-toggler-icon {
+  width: 24px;
+  height: 24px;
+  fill: var(--text-white);
+  color: var(--text-white);
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  left: -300px;
+  width: 300px;
+  height: 100vh;
+  background-color: var(--dark-bg);
+  color: var(--text-white);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1rem;
+  gap: 1rem;
+  transition: left 0.3s ease-in-out;
+  z-index: 1000;
+}
+
+.menu-open {
+  left: 0; /* Show the menu */
+}
+
+.menu a {
+  text-decoration: none;
+  color: var(--text-white);
+  padding: 10px 15px;
+  width: 100%;
+  text-align: left;
+  border-radius: 25px; /* Bordes redondeados */
+  transition: all 0.3s ease;
+}
+
+.menu a:hover {
+  background-color: var(--text-white); /* Fondo blanco */
+  color: var(--dark-bg); /* Letra negra */
+}
+
+.close-menu-button {
+  background: none;
+  border: none;
+  color: var(--text-white);
+  align-self: flex-end;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+
+.close-menu-button svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* Footer Styles */
+
+
+.contact-info-container {
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.contact-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--institutional-yellow);
+  margin-bottom: 10px;
+}
+
+.contact-list {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  list-style: none;
+}
+
+.contact-number {
+  font-size: 16px;
+  margin-bottom: 5px;
+  color: var(--light-beige);
+}
+
+.contact-number::before {
+  content: "→ ";
+  color: var(--institutional-yellow);
+  margin-right: 5px;
+}
+
+.rights-container {
+  text-align: center;
+}
+
+.rights {
+  font-size: 14px;
+  color: var(--light-beige);
+  margin: 0;
+}
+
+.logo-footer {
+  width: 200px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Media Queries */
+
+/* Header */
+.header {
+  font-family: 'Merriweather', serif; /* Estilo predeterminado para todo el sitio */
+  position: fixed; /* Fija el header en la parte superior */
+  top: 0;
+  left: 0;
+  width: 100%; /* Asegura que ocupe todo el ancho */
+  background-color: var(--dark-bg);
+  color: var(--text-white);
+  padding: 1rem;
+  border-bottom: 2px solid var(--institutional-yellow);
+  z-index: 1000; /* Asegura que esté encima del contenido */
+}
+
+.logo-navbar {
+  width: 250px;
+  height: auto;
+}
+
+
+
+/* Footer */
+.footer {
+  font-family: 'Merriweather', serif; /* Estilo predeterminado para todo el sitio */
+  padding: 20px 0;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--dark-bg);
+  color: var(--light-beige);
+  text-align: center;
+}
+
+/* Navbar en dispositivos móviles */
+.navbar-toggler {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-white);
+}
+
+.navbar-toggler-icon {
+  width: 24px;
+  height: 24px;
+  fill: var(--text-white);
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  left: -300px;
+  width: 300px;
+  height: 100vh;
+  background-color: var(--dark-bg);
+  color: var(--text-white);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1rem;
+  gap: 1rem;
+  transition: left 0.3s ease-in-out;
+  z-index: 1001; /* Sobre el contenido pero debajo del header */
+}
+
+.menu-open {
+  left: 0;
+}
+
+.menu a {
+  text-decoration: none;
+  color: var(--text-white);
+  padding: 10px 15px;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+
+.menu a:hover {
+  background-color: var(--text-white);
+  color: var(--dark-bg);
+}
+/* Contenedor principal desplazable */
+.main-content {
+  flex: 1;
+  overflow-y: auto; /* Permite el desplazamiento */
+}
+.navbar-space{
+  min-height: 100px;
+  width: 100%;
+  background-color: red;
+}
+ 
+
+/* Mobile Devices */
+@media screen and (max-width: 768px) {
+  .logo-navbar {
+    width: 150px;
+  }
+
+  .navbar-space {
+    min-height: 70px; /* Ajusta para pantallas más pequeñas */
+    max-height: 70px; 
+  }
+
+  .footer {
+    padding: 20px 0;
+    min-height: 150px;
+  }
+
+  .logo-footer {
+    width: 120px;
+  }
+
+  .rights {
+    font-size: 12px;
+  }
+
+  .contact-title {
+    font-size: 18px;
+  }
+
+  .contact-list {
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+
+  .contact-number {
+    font-size: 14px;
+  }
+
+  .rights-container {
+    margin-bottom: 0;
+  }
+
+  /* Mobile Menu Button Styling */
+  .navbar-toggler {
+    color: var(--text-white); /* Botón blanco */
+  }
+
+  .menu a {
+    padding: 15px 20px; /* Ajuste para botones más grandes */
+  }
+}
+
+/* High-Resolution Screens (Totem) */
+@media screen and (min-width: 2160px) and (min-height: 3840px) {
+  .header {
+   height: 300px;
+  }
+  .logo-navbar{
+    width: 700px;
+  }
+  .desktop-nav a{
+    width: 250px;
+    font-size: 35px;
+  }
+  .navbar-space {
+    min-height: 300px; 
+    max-height: 300px;/* Espacio para evitar que el contenido quede detrás del header */
+  }
+  .footer {
+    height: 350px;
+    position: fixed;
+    pointer-events: none;
+  }
+
+  .contact-title {
+    margin-top: 20px;
+    font-size: 50px;
+  }
+
+  .logo-footer {
+    width: 400px;
+  }
+
+  .contact-list {
+    gap: 40px;
+  }
+
+  .contact-number {
+    font-size: 40px;
+  }
+
+  .rights {
+    font-size: 20px;
+  }
+
+  .menu {
+    position: static;
+    flex-direction: row;
+    gap: 1.5rem;
+  }
+}
+
+
+
+
+ 

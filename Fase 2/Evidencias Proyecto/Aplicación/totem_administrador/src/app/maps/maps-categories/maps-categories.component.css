@@ -1,0 +1,122 @@
+@font-face {
+  font-family: 'Merriweather';
+  src: url('/assets/Merriweather/Merriweather-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Merriweather';
+  src: url('/assets/Merriweather/Merriweather-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Merriweather';
+  src: url('/assets/Merriweather/Merriweather-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Merriweather';
+  src: url('/assets/Merriweather/Merriweather-BoldItalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Merriweather';
+  src: url('/assets/Merriweather/Merriweather-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Merriweather';
+  src: url('/assets/Merriweather/Merriweather-LightItalic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Merriweather';
+  src: url('/assets/Merriweather/Merriweather-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Merriweather';
+  src: url('/assets/Merriweather/Merriweather-BlackItalic.ttf') format('truetype');
+  font-weight: 900;
+  font-style: italic;
+}
+
+
+/* Estilo de las instrucciones */
+.instructions {
+  font-family: 'Merriweather', serif;
+  font-size: 18px;
+  text-align: center;
+  margin-bottom: 10px;
+  color: var(--institutional-blue);
+}
+
+/* Contenedor de cada edificio */
+.building-container {
+  width: 500px; /* Ancho fijo */
+  background-color: var(--text-white); /* Fondo beige claro */
+  border: 2px solid var(--institutional-yellow); /* Borde amarillo */
+  border-radius: 12px; /* Bordes redondeados */
+  margin: 20px auto; /* Centra horizontalmente con margen vertical */
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+/* Título del edificio */
+.building-container h2 {
+  font-family: 'Merriweather', serif;
+  font-size: 22px;
+  text-align: center;
+  margin-bottom: 10px;
+  color: var(--institutional-blue); /* Azul institucional */
+}
+
+/* Botones de pisos */
+.floor-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; /* Permite que los botones se envuelvan */
+  gap: 10px; /* Espaciado entre botones */
+}
+
+/* Estilo de los botones */
+button {
+  font-family: 'Merriweather', serif;
+  font-size: 16px;
+  padding: 10px 20px;
+  background-color: var(--text-white); /* Amarillo institucional */
+  color: var(--dark-bg); /* Texto blanco */
+  border-radius: 8px;
+  border: var(--institutional-yellow) 2px solid;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+  background-color: var(--institutional-yellow); /* Color más oscuro al pasar el mouse */
+  color: var(--text-white);
+  transform: translateY(-2px); /* Efecto de elevación */
+}
+
+button:active {
+  background-color: #c69500; /* Color más oscuro al hacer clic */
+  transform: translateY(0);
+}
+
+button:focus {
+  outline: 2px solid var(--institutional-blue); /* Contorno azul */
+}
